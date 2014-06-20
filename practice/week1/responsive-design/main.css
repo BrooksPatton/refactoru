@@ -1,0 +1,32 @@
+img {
+	max-width: 100%;
+}
+
+.block {
+	background: #f00;
+}
+
+.block-alt {
+	background: #00f;
+}
+
+@media screen and (min-width: 200px){
+	.block {
+		width: 50%;
+		float: left;
+	}
+
+	.block-alt {
+		background-color: green;
+	}
+}
+
+@media screen and (min-width: 400px) {
+	.block {
+		font-size: 24px;
+	}
+}
+
+html.borderradius .block {
+	border-radius: 5px;
+}

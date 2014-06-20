@@ -15,6 +15,8 @@ $link-bar-height: 34px;
 
 $margin-standard: 40px 20px;
 
+$table-padding: 10px;
+
 // Font Changes
 h1 {
 	font-size: 18px;
@@ -29,8 +31,11 @@ h3 {
 }
 
 p {
-	font-size: 13px;
-	line-height: 1.5em;
+	@extend .text-standard;
+}
+
+li {
+	@extend .text-standard;
 }
 
 // Global changes
@@ -62,11 +67,64 @@ p {
 	box-sizing: border-box;
 }
 
+.table-border {
+	border: 1px solid gray;
+}
+
+.button {
+	padding: 10px 25px;
+	text-decoration: none;
+	color: white;
+}
+
+.button-long {
+	padding: 10px 45%;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+}
+
+.peter-river {
+	background-color: #3498db;
+}
+
+.code {
+	background-color: silver;
+	padding: 10px 40px;
+	overflow: hidden;
+}
+
+.text-standard {
+	font-size: 13px;
+	line-height: 1.5em;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.dim-small {
+	font-size: 0.75em;
+	color: silver;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.table-comments td {
+	padding: 3px;
+}
+
+.pomegranite {
+	background-color: #c0392b;
+}
+
 // Layout
 .container {
 	width: $container-width;
 	margin-top: $container-margin;
-	min-width: 600px;
+	min-width: 615px;
 }
 
 .main {
@@ -125,7 +183,17 @@ p {
 
 .table {
 	width: 100%;
-	
+}
+
+.table tr > th {
+	background-color: gray;
+	padding: $table-padding;
+	@extend .table-border;
+}
+
+.table > tr > td {
+	padding: $table-padding;
+	@extend .table-border;
 }
 
 .recent {
@@ -135,4 +203,36 @@ p {
 	position: fixed;
 	left: 75%;
 	top: 10%;
+}
+
+.title-comments {
+	@extend .title-section;
+	border-bottom: 1px solid silver;
+}
+
+.legend {
+	position: relative;
+	top: 20px;
+	background-color: white;
+	width: 85px;
+	text-align: center;
+}
+
+.form {
+	margin-left: 40%;
+}
+
+.textarea {
+	width: 95%;
+	height: 10em;
+	margin: 10px 10px 40px 10px;
+}
+
+.img-profile {
+	float: left;
+	padding: 10px;
+}
+
+.comment-stream {
+	padding-top: 40px;
 }
