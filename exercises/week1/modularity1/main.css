@@ -1,0 +1,108 @@
+/* Data Table */
+.dataTable {
+	width: 100%;
+}
+
+.dataTable td, .dataTable th {
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.dataTable tr:last-child td {
+	border-bottom: none;
+}
+
+/* Stats */
+.prominentNumberTable {
+	border: 1px solid #ccc;
+	border-width: 1px 0;
+}
+
+.prominentNumberTable tr td {
+	padding: 20px;
+}
+
+.prominentNumber {
+	text-align: center;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.smallLabel {
+	font-size: 12px;
+	color: #ccc;
+	border-color: #ccc;
+}
+
+/*3. Bar Chart*/
+.barChart3 th {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.barChart3 td {
+	width: 100%;
+	padding: 1px 10px;
+}
+
+.barchart {
+	color: #fff;
+	font-size: 14px;
+	background-color: #629edb;
+	line-height: 24px;
+	border-radius: 0 3px 3px 0;
+	padding-left: 5px;
+}
+
+/* Lightbox */
+
+.lightbox {
+	/*position: fixed;*/
+	/*top: 0;*/
+	/*left: 0;*/
+	/*width: 100%;*/
+	height: 100%;
+	background-color: gray;
+	opacity: 0.95;
+	padding: 10px;
+	display: table;
+}
+
+.lightbox-container {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.lightbox-content {
+	background-color: white;
+	opacity: 1;
+	padding: 20px;
+	border-radius: 10px;
+	margin: 0 auto;
+	max-width: 500px;
+	overflow: hidden;
+}
+
+.pull-right {
+	float: right;
+}
+
+.lightbox-button {
+	text-decoration: none;
+	padding: 10px 40px;
+	color: white;
+	background-color: #ec828a;
+	border-radius: 5px;
+}
+
+/*5. Media Block*/
+
+.floatLeft {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.media-body {
+	overflow: hidden;
+}

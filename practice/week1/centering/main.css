@@ -1,0 +1,38 @@
+.container {
+	width: 500px;
+	height: 500px;
+	margin: 20px;
+	background-color: skyblue;
+}
+
+.box {
+	width: 100px;
+	height: 100px;
+	background-color: wheat;
+}
+
+.inline-horizontal {
+	text-align: center;
+}
+
+.inline-vertical {
+	line-height: 500px;
+}
+
+.inline-vertical > *{
+	vertical-align: middle;
+}
+
+.block-horizontal > * {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.block-vertical {
+	display: table;
+}
+
+.block-vertical-inner {
+	display: table-cell;
+	vertical-align: middle;
+}

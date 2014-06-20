@@ -1,0 +1,115 @@
+// Variable declarations
+$container-width: 100%;
+
+$container-margin: 20px;
+
+$main-width: 50%;
+
+$recent-width: 170px;
+
+$test-height: 500px;
+
+$band-height: 5px;
+
+$link-bar-height: 34px;
+
+$margin-standard: 40px 20px;
+
+// Font Changes
+h1 {
+	font-size: 18px;
+}
+
+h2 {
+	font-size: 15px;
+}
+
+// Global changes
+.simple-border {
+	border: 1px solid black;
+}
+
+.center-margin {
+	margin: 0 auto;
+}
+
+.emerald {
+	background-color: rgb(46, 204, 113);
+}
+
+.nephritis {
+	background-color: rgb(39, 174, 96);
+}
+
+.wet-asphalt {
+	background-color: rgb(52, 73, 94);
+}
+
+.midnight-blue {
+	background-color: rgb(44, 62, 80);
+}
+
+.border-box {
+	box-sizing: border-box;
+}
+
+// Layout
+.container {
+	width: $container-width;
+	margin-top: $container-margin;
+	min-width: 600px;
+}
+
+.main {
+	width: $main-width;
+	height: $test-height;
+	@extend .center-margin;
+}
+
+.title-top {
+	height: 200px;
+	position: relative;
+}
+
+.title-top > * {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	color: white;
+}
+
+.band {
+	height: $band-height;
+}
+
+.link-bar {
+	height: $link-bar-height;
+}
+
+.nav {
+	line-height: $link-bar-height;
+	float: right;
+}
+
+.nav > a {
+	margin: 0 10px;
+	text-decoration: none;
+	color: white;
+}
+
+.title-article {
+	margin: $margin-standard;
+}
+
+.title-article > p {
+	margin: 10px 20px;
+}
+
+.recent {
+	width: $recent-width;
+	@extend .simple-border;
+	height: $test-height;
+	position: fixed;
+	left: 75%;
+	top: 10%;
+}

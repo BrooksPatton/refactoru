@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Modularity</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="framework.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+  	<div class="instructions-container">
+
+  		<ol class="instruction-list" start="6">
+
+  			<li>
+  				<h1 class="instruction-title">Horizontally Spaced</h1>
+
+	    		<p class="instruction-text">Center multiple arbitrary elements horizontally, with padding.</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+						<div class="centerWithPadding">
+							<img src="http://placehold.it/160">
+							<img src="http://placehold.it/160">
+							<img src="http://placehold.it/160">
+						</div>
+				    <!-- End editable area -->
+			    </div>
+
+	    		<p class="instruction-text">Works with different HTML...</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+						<div class="centerWithPadding">
+							<img src="http://placehold.it/120">
+							<img src="http://placehold.it/160">
+				    	<p>Oh hello</p>
+							<img src="http://placehold.it/80">
+							<ol>
+								<li>Ready</li>
+								<li>Fire</li>
+								<li>Aim</li>
+							</ol>
+						</div>
+				    <!-- End editable area -->
+			    </div>
+			  </li>
+
+  			<li>
+  				<h1 class="instruction-title">Vertically Spaced</h1>
+
+	    		<p class="instruction-text">Center arbitrary elements vertically, with padding.</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+						<div class="verticallySpaced">
+							<div class="center-vertical">
+								<img src="http://placehold.it/50">
+								<img src="http://placehold.it/50">
+								<img src="http://placehold.it/50">
+							</div>
+						</div>
+				    <!-- End editable area -->
+			    </div>
+
+	    		<p class="instruction-text">Works with different HTML...</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+			    	<div class="verticallySpaced">
+							<div class="center-vertical">
+								<img src="http://placehold.it/50">
+								<img src="http://placehold.it/20">
+					    	<p>Oh hello</p>
+								<img src="http://placehold.it/30">
+								<ol>
+									<li>Ready</li>
+									<li>Fire</li>
+									<li>Aim</li>
+								</ol>
+							</div>
+						</div>
+				    <!-- End editable area -->
+			    </div>
+			  </li>
+
+  			<li>
+  				<h1 class="instruction-title">Horizontal List</h1>
+
+	    		<p class="instruction-text">Make the list items horizontal instead of vertical.</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+			    	<ul class="horizontalList">
+							<li>Ready</li>
+							<li>Fire</li>
+							<li>Aim</li>
+			    	</ul>
+				    <!-- End editable area -->
+			    </div>
+			  </li>
+
+  			<li>
+  				<h1 class="instruction-title">Buttons</h1>
+
+	    		<p class="instruction-text">Create a set of different-sized buttons.</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+			    	<a href="#" class="buttonLarge turnIntoButton">Buy Now</a>
+			    	<a href="#" class="turnIntoButton">Learn More</a>
+			    	<a href="#" class="buttonSmall turnIntoButton">OK</a>
+				    <!-- End editable area -->
+			    </div>
+
+	    		<p class="instruction-text">Should work with both &lt;a&gt;, &lt;button&gt;, and &lt;submit&gt; elements.</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+			    	<a href="#" class="turnIntoButton">Learn More</a>
+			    	<input type="button" href="#" value="Accept" class="turnIntoButton">
+			    	<input type="submit" href="#" value="Submit" class="turnIntoButton">
+				    <!-- End editable area -->
+			    </div>
+			  </li>
+
+  			<li>
+  				<h1 class="instruction-title">Navigation</h1>
+
+	    		<p class="instruction-text">Create a navigation menu with links that are highlighted on hover.</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+			    	<nav>
+			    		<ul class="horizontalList nav-list">
+			    			<li><a href="#" class="turnIntoButton nav-link">Home</a></li>
+			    			<li><a href="#" class="turnIntoButton nav-link">Products</a></li>
+			    			<li><a href="#" class="turnIntoButton nav-link">About</a></li>
+			    			<li><a href="#" class="turnIntoButton nav-link">News</a></li>
+			    			<li><a href="#" class="turnIntoButton nav-link">Contact</a></li>
+			    		</ul>
+			    	</nav>
+				    <!-- End editable area -->
+			    </div>
+			  </li>
+
+  			<li>
+  				<h1 class="instruction-title">Pagination</h1>
+
+	    		<p class="instruction-text">Style a pagination control for navigating through pages of search results.</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+			    	<ol class="list-noStyle list-pagination">
+			    		<li ><a href="#" class="link-plain unadorned-link">prev</a></li>
+			    		<li><a href="#" class="link-plain">5</a></li>
+			    		<li><a href="#" class="link-plain">6</a></li>
+			    		<li><a href="#" class="link-plain">7</a></li>
+			    		<li><span class="link-plain number-disabled">8</span></li>
+			    		<li><a href="#" class="link-plain">9</a></li>
+			    		<li><a href="#" class="link-plain">10</a></li>
+			    		<li><a href="#" class="link-plain">11</a></li>
+			    		<li><a href="#" class="link-plain unadorned-link">next</a></li>
+			    	</ol>
+				    <!-- End editable area -->
+			    </div>
+			  </li>
+
+  			<li>
+  				<h1 class="instruction-title">Comment Stream</h1>
+
+	    		<p class="instruction-text">Style a stream of user comments.</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+				    <div></div>>
+				    	<div class="floatLeft">
+					    	<img src="http://gravatar.com/avatar/0?d=identicon">
+					    </div>
+				    	<div class="floatLeft">
+				    		<strong>@metaraine</strong>
+					    	<time class="commentsDate">Thursday, June 27, 2013, 4:15pm</time>
+					    	<p>Wow, that was an amazing article.</p>
+					    </div>
+					  </div>
+
+				    <div class="overflow">
+				    	<div class="floatLeft">
+					    	<img src="http://gravatar.com/avatar/1?d=identicon">
+					    </div>
+				    	<div class="floatLeft">
+				    		<strong>@seandaken</strong>
+					    	<time class="commentsDate">Friday, June 28, 2013, 11:02</time>
+					    	<p>I learned 100 new things.</p>
+					    </div>
+					  </div>
+
+				    <div class="overflow">
+				    	<div class="floatLeft">
+					    	<img src="http://gravatar.com/avatar/0?d=identicon">
+					    </div>
+				    	<div class="floatLeft">
+				    		<strong>@metaraine</strong>
+					    	<time class="commentsDate">2 hours ago</time>
+					    	<p>How about we have the RefactorU student climb Bear Peak each morning before class?</p>
+
+						    <div class="overflow">
+						    	<div class="floatLeft">
+							    	<img src="http://gravatar.com/avatar/1?d=identicon&s=60">
+							    </div>
+						    	<div class="floatLeft">
+						    		<strong>@seandaken</strong>
+							    	<time class="commentsDate">45 minutes ago</time>
+							    	<p>Sure</p>
+							    </div>
+							  </div>
+
+						    <div class="overflow">
+						    	<div class="floatLeft">
+							    	<img src="http://gravatar.com/avatar/2?d=identicon&s=60">
+							    </div>
+						    	<div class="floatLeft">
+						    		<strong>@nullempire</strong>
+							    	<time class="commentsDate">just now</time>
+							    	<p>No!</p>
+							    </div>
+							  </div>
+							</div>
+				    </div>
+					    <!-- End editable area -->
+			    </div>
+			  </li>
+
+  			<li>
+  				<h1 class="instruction-title">Tabs</h1>
+
+	    		<p class="instruction-text">Create styles for a tabbed content control. There should be an active tab that is styled to appear in the foreground.</p>
+					<div class="instruction-answer">
+			    	<!-- Edit here -->
+			    	<ul class="tabsListStyle">
+			    		<li><a href="#" class="tabsLinkReset">
+			    			<div class="tab-heading">First</div>
+			    		</a></li>
+			    		<li><a href="#" class="tabsLinkReset tabsActive">
+			    			<div class="tab-heading">Second</div>
+			    		</a></li>
+			    		<li><a href="#" class="tabsLinkReset">
+			    			<div class="tab-heading">Third</div>
+			    		</a></li>
+			    		<li><a href="#" class="tabsLinkReset">
+			    			<div class="tab-heading">Fourth</div>
+			    		</a></li>
+			    	</ul>
+	    			<div class="tabsContent">
+				    	<p>Lemon drops dessert bonbon sesame snaps. Cheesecake candy canes ice cream dessert toffee applicake caramels pudding pie. Marshmallow wypas halvah ice cream.</p>
+							<p>Tart croissant lollipop toffee bear claw gingerbread candy canes tart. Cookie candy canes carrot cake muffin danish jelly beans cookie. Donut liquorice jelly dragée biscuit cookie wafer. Soufflé caramels gingerbread cheesecake sesame snaps.</p>
+							<p>Chocolate cake wypas pie tiramisu lollipop chocolate bar lollipop. Chupa chups sugar plum oat cake candy canes lemon drops. Brownie fruitcake oat cake gummi bears faworki. Muffin cheesecake pastry.</p>
+	    			</div>
+				    <!-- End editable area -->
+			    </div>
+			  </li>
+
+
+			</ol>
+		</div>
+	</body>
+</html>

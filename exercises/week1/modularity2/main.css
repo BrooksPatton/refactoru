@@ -1,0 +1,172 @@
+/*6. Horizontally Spaced*/
+.centerWithPadding {
+	text-align: center;
+}
+
+.centerWithPadding > * {
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px;
+	text-align: left;
+}
+
+/*7. Vertically Spaced*/
+.verticallySpaced {
+	display: table;
+	height: 300px;
+}
+
+.center-vertical {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/*8. Horizontal List*/
+.horizontalList {
+	padding: 0;
+}
+
+.horizontalList > li {
+	float: left;
+	list-style: none;
+}
+
+/*9. Buttons*/
+.turnIntoButton {
+	padding: 10px 40px;
+	display: inline-block;
+	background-color: #ec828a;
+	border-radius: 5px;
+	text-decoration: none;
+	color: white;
+	border: 0;
+}
+
+.buttonLarge {
+	padding: 20px 60px;
+	font-size: 1.5em;
+}
+
+.buttonSmall {
+	padding: 5px 8px;
+	font-size: 0.8em;
+}
+
+/*10. Navigation*/
+.nav-link {
+	border-radius: 0;
+}
+
+li:first-child > .nav-link {
+	border-radius: 5px 0 0 5px;
+}
+
+li:last-child > .nav-link {
+	border-radius: 0 5px 5px 0;
+}
+
+/*11. Pagination*/
+.list-noStyle {
+	padding: 0;
+}
+
+.list-noStyle > li {
+	list-style: none;
+	float: left;
+}
+
+.list-pagination {
+	display: inline-block;
+	padding: 0 3px 0 3px;
+}
+
+.link-plain {
+	text-decoration: none;
+	color: #ec828a;
+	display: inline-block;
+	text-decoration: none;
+	padding: 5px 9px;
+	margin: 5px;
+	border: 1px solid #ec828a;
+	border-width: 0 0 3px 0;
+}
+
+.unadorned-link {
+	border-color: transparent;
+}
+
+.number-disabled {
+	color: #ccc;
+	border-color: #ccc;
+	margin:	5px 10px;
+}
+
+
+
+
+.floatLeft {
+	float: left;
+	margin: 5px;
+}
+
+.overflow {
+	overflow: hidden;
+	clear: left;
+}
+
+.commentsDate {
+	font-size: 8px;
+	color: gray
+}
+
+/*13. Tabls*/
+.tabsContent {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #aad;
+}
+
+.tabsListStyle {
+	list-style: none;
+	padding-left: 10px;
+}
+
+.tabsListStyle > li {
+	display: inline-block;
+}
+
+.tabsListItems {
+	display: inline-block;
+	margin-bottom: -1px;
+	margin-right: 5px;
+	padding: 5px 10px 5px 10px;
+}
+
+.tabsLinkReset {
+	text-decoration: none;
+	display: inline-block;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 7px 7px 0 0;
+	border: 1px solid #aad;
+	margin-right: 5px;
+	position: relative;
+	top: 17px;
+}
+
+.tab-heading {
+
+}
+
+.tabsInactive {
+	border: 1px solid purple;
+}
+
+.tabsBorderRadius {
+	border-radius: 5px 5px 0 0;
+}
+
+.tabsActive {
+	border-bottom: 1px solid white;	
+}
