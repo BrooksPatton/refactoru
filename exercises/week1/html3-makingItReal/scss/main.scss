@@ -5,7 +5,7 @@ $container-margin: 20px;
 
 $main-width: 50%;
 
-$recent-width: 170px;
+$recent-width: 211px;
 
 $test-height: 500px;
 
@@ -120,17 +120,26 @@ li {
 	background-color: #c0392b;
 }
 
+.red {
+	color: red;
+}
+
 // Layout
+
+body {
+	min-width: 700px;
+}
+
 .container {
-	width: $container-width;
-	margin-top: $container-margin;
 	min-width: 615px;
+	background-color: silver;
 }
 
 .main {
 	width: $main-width;
-	height: $test-height;
 	@extend .center-margin;
+	background-color: white;
+	padding: 20px;
 }
 
 .title-top {
@@ -185,13 +194,13 @@ p {
 	width: 100%;
 }
 
-.table tr > th {
+.table th {
 	background-color: gray;
 	padding: $table-padding;
 	@extend .table-border;
 }
 
-.table > tr > td {
+.table td {
 	padding: $table-padding;
 	@extend .table-border;
 }
@@ -199,10 +208,10 @@ p {
 .recent {
 	width: $recent-width;
 	@extend .simple-border;
-	height: $test-height;
 	position: fixed;
-	left: 75%;
+	left: 77%;
 	top: 10%;
+	background-color: white;
 }
 
 .title-comments {
@@ -235,4 +244,9 @@ p {
 
 .comment-stream {
 	padding-top: 40px;
+}
+
+.comment-reply {
+	margin-left: 25%;
+	border-left: 1px solid silver;
 }

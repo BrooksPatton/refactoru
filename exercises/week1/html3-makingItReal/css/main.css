@@ -38,7 +38,7 @@ h3 {
   box-sizing: border-box;
 }
 
-.table-border, .table tr > th, .table > tr > td {
+.table-border, .table th, .table td {
   border: 1px solid gray;
 }
 
@@ -91,15 +91,23 @@ h3 {
   background-color: #c0392b;
 }
 
+.red {
+  color: red;
+}
+
+body {
+  min-width: 700px;
+}
+
 .container {
-  width: 100%;
-  margin-top: 20px;
   min-width: 615px;
+  background-color: silver;
 }
 
 .main {
   width: 50%;
-  height: 500px;
+  background-color: white;
+  padding: 20px;
 }
 
 .title-top {
@@ -154,21 +162,21 @@ p {
   width: 100%;
 }
 
-.table tr > th {
+.table th {
   background-color: gray;
   padding: 10px;
 }
 
-.table > tr > td {
+.table td {
   padding: 10px;
 }
 
 .recent {
-  width: 170px;
-  height: 500px;
+  width: 211px;
   position: fixed;
-  left: 75%;
+  left: 77%;
   top: 10%;
+  background-color: white;
 }
 
 .title-comments {
@@ -200,4 +208,9 @@ p {
 
 .comment-stream {
   padding-top: 40px;
+}
+
+.comment-reply {
+  margin-left: 25%;
+  border-left: 1px solid silver;
 }
