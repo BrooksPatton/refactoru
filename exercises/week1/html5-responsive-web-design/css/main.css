@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: Georgia;
+}
+
+h1 {
+  font-family: "Brush Script MT";
+}
+
+@media all and (max-width: 320px) {
+  h1 {
+    font-size: 25px;
+    margin-top: 0;
+  }
+
+  .container {
+    margin: 3.125%;
+  }
+
+  .navigation {
+    background-color: #ccffff;
+    padding: 3.33333%;
+  }
+}
