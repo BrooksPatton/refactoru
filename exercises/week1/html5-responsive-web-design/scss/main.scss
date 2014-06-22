@@ -1,0 +1,43 @@
+// Reset and Normalize
+
+* {
+    box-sizing: border-box;
+}
+// Font defaults
+
+* {
+    font-family: Georgia;
+}
+
+h1 {
+    font-family: "Brush Script MT";
+}
+
+// Layout
+
+.float-left {
+    // float: left;
+}
+
+// Media Queries
+// Sized for iPhones
+
+@media all and (max-width: 320px) {
+    // Font Changes
+
+    h1 {
+        font-size: 25px;
+        margin-top: 0;
+    }
+
+    // Layout
+
+    .container {
+        margin: 10px / 320px * 100%;
+    }
+
+    .navigation {
+        background-color: #ccffff;
+        padding: 10px / 300px * 100%;
+    }
+}
