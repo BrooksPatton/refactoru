@@ -1,31 +1,32 @@
+var stop = true;
 var victims = {};
-victims.number = prompt("How many disaster victims do you wish to enter?");
-
 victims.name = [];
 victims.phone = [];
 victims.street = [];
-
-for(var i = 1; i <= victims.number; i++) {
-	victims.name[i] = prompt("Name of victim " + i);
-	victims.phone[i] = prompt("Phone number of victim " + i);
-	victims.street[i] = prompt("Street of victim " + i);
-}
-
 var volunteers = {};
-volunteers.number = prompt("How many volunteers do you wish to enter?");
-
 volunteers.name = [];
 volunteers.phone = [];
 volunteers.street = [];
 
-for(var i = 1; i <= volunteers.number; i++) {
-	volunteers.name.push(prompt("Name of Volunteer" + i));
-	volunteers.phone.push(prompt("Phone number of Volunteer" + i));
-	volunteers.street.push(prompt("Street of Volunteer" + i));
+while(stop === true) {
+	victims.name.push(prompt("Name of victim"));
+	victims.phone.push(prompt("Phone number of victim"));
+	victims.street.push(prompt("Street of victim"));
+	stop = confirm("Would you like to enter another victim?");
 }
 
-alert("Number of people in need: " + victims.number + "\n" 
-	+ "Number of volunteers: " + volunteers.number);
+stop = true;
+while(stop === true) {
+	volunteers.name.push(prompt("Name of Volunteer"));
+	volunteers.phone.push(prompt("Phone number of Volunteer"));
+	volunteers.street.push(prompt("Street of Volunteer"));
+	stop = confirm("Would you like to enter another Volunteer?");
+}
+
+
+
+alert("Number of people in need: " + victims.name.length + "\n" 
+	+ "Number of volunteers: " + volunteers.name.length);
 
 document.write("<h1>volunteers</h1><ul>");
 volunteers.name.forEach(function(name) {
