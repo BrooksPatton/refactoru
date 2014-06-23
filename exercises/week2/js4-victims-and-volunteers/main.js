@@ -1,42 +1,60 @@
-var stop = true;
-var victims = {};
-victims.name = [];
-victims.phone = [];
-victims.street = [];
-var volunteers = {};
-volunteers.name = [];
-volunteers.phone = [];
-volunteers.street = [];
+var victims = [];
+var volunteers = [];
+var count = 0;
+var name = "";
+var phone = "";
+var street = "";
 
-while(stop === true) {
-	victims.name.push(prompt("Name of victim"));
-	victims.phone.push(prompt("Phone number of victim"));
-	victims.street.push(prompt("Street of victim"));
-	stop = confirm("Would you like to enter another victim?");
+while(confirm("Would you like to enter a victim?") === true) {
+	victims[count] = {
+		name: prompt("Name of victim"),
+		phone: prompt("Phone number of victim"),
+		street: prompt("Street of victim")
+	};
+	count++;
 }
 
-stop = true;
-while(stop === true) {
-	volunteers.name.push(prompt("Name of Volunteer"));
-	volunteers.phone.push(prompt("Phone number of Volunteer"));
-	volunteers.street.push(prompt("Street of Volunteer"));
-	stop = confirm("Would you like to enter another Volunteer?");
+count = 0;
+while(confirm("Would you like to enter a volunteer?") === true) {
+	volunteers[count] = {
+		name: prompt("Name of Volunteer"),
+		phone: prompt("Phone number of Volunteer"),
+		street: prompt("Street of Volunteer")
+	};
+	count++;
 }
 
-
-
-alert("Number of people in need: " + victims.name.length + "\n" 
-	+ "Number of volunteers: " + volunteers.name.length);
-
-document.write("<h1>volunteers</h1><ul>");
-volunteers.name.forEach(function(name) {
-	document.write("<li>" + name + "</li>");
+document.write("<h1>Number of people in need: " + victims.length + "</h1>");
+victims.forEach(function(victim) {
+	document.write("<ul><li>" + victim.name + "</li>");
+	document.write("<li><ul><li>" + victim.phone + "</li>");
+	document.write("<li>" + victim.street + "</li></ul></ul>");
 });
-document.write("</ul>");
 
+document.write("<h1>Number of volunteers: " + volunteers.length + "</h1>");
+volunteers.forEach(function(volunteer) {
+	document.write("<ul><li>" + volunteer.name + "</li>");
+	document.write("<li><ul><li>" + volunteer.phone + "</li>");
+	document.write("<li>" + volunteer.street + "</li></ul></ul>");
+});
 
-document.write("<h1>victims</h1><ul>");
-victims.name.forEach(function(name) {
-	document.write("<li>" + name + "</li>");
+var victimName = prompt("Enter the name of a victim");
+victims.forEach(function(victim){
+	if(victimName === victim.name) {
+		street = victim.street;
+	}
+});
+
+var volunteersAvailable = [];
+volunteers.forEach(function(volunteer) {
+	if(street === volunteer.street) {
+		volunteersAvailable.push(volunteer)
+	}
+});
+
+document.write("<h2>Help for " + victimName + "</h2>");
+document.write("<ul>");
+volunteersAvailable.forEach(function(volunteer){
+	document.write("<li>" + volunteer.name + "</li>");
 });
 document.write("</ul>");
