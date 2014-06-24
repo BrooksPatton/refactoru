@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Untitled</title>
+	<meta charset="utf-8">
+	<title>Untitled</title>
 </head>
 <body>
 
-	<h1>Enter Victim</h1>
-	<form>
-		<p>
-			name: <input type="text" id="victimName"><br>
-			phone: <input type="text" id="victimPhone"><br>
-			address: <input type="text" id="victimAddress"><br>
-		</p>
-	</form>
+	<div class="form">
+		<h1>Enter Victim</h1>
+		<form>
+			<p>
+				name: <input type="text" name="victimName"><br>
+				phone: <input type="text" name="victimPhone"><br>
+				address: <input type="text" name="victimAddress"><br>
+				<input type="button" value="add victim" onclick="addVictim(this.form);">
+			</p>
+		</form>
+	</div>
+
+	<div class="form">
+		<h1>Enter Volunteer</h1>
+		<form>
+			<p>
+				name: <input type="text" id="volunteerName"><br>
+				phone: <input type="text" id="volunteerPhone"><br>
+				address: <input type="text" id="volunteerAddress"><br>
+				<input type="button" value="Add volunteer" onclick="addVolunteer(this.form);">
+			</p>
+		</form>
+	</div>
+
+	<div class="people">
+		<h2>Volunteers</h2>
+		<ul id="volunteers"></ul>
+	</div>
+
+	<div class="people">
+		<h2>Victims</h2>
+		<ul id="victims"></ul>
+	</div>
 	
-  <script src="main.js"></script>
+	<script src="main.js"></script>
 
 </body>
 </html>
