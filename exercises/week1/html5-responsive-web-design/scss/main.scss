@@ -13,31 +13,232 @@ h1 {
     font-family: "Brush Script MT";
 }
 
-// Layout
-
-.float-left {
-    // float: left;
+h1 {
+    font-size: 25px;
+    margin-top: 0;
 }
 
-// Media Queries
-// Sized for iPhones
+a, p {
+    font-size: 25px;
+}
 
-@media all and (max-width: 320px) {
-    // Font Changes
+// Background color
+
+.bg-light-blue {
+    background-color: #ccffff;
+}
+
+// Text changes
+
+.link-scrub {
+    text-decoration: none;
+}
+
+// Layout for iPhone
+
+.container {
+    margin: 10px / 320px * 100%;
+}
+
+.navigation {
+    padding: 10px / 300px * 100%;
+}
+
+.nav {
+    display: block;
+    text-align: center;
+    margin-top: 5px / 300px * 100%;
+}
+
+.nav:first-child {
+    margin: 0;
+}
+
+.title-page {
+    text-align: center;
+}
+
+.text:nth-child(2n) {
+    @extend .bg-light-blue;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.gallery-img {
+    float: left;
+    padding: 5px / 300px * 100%;
+}
+
+// Media queries
+
+@media all and (min-width: 900px) {
+    // Font Defaults
 
     h1 {
-        font-size: 25px;
-        margin-top: 0;
+        font-size: 50px;
     }
 
-    // Layout
+    a, p {
+        font-size: 15px;
+    }
 
     .container {
-        margin: 10px / 320px * 100%;
+        max-width: 960px;
+        margin-top: 10px / 960px * 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .navigation {
-        background-color: #ccffff;
-        padding: 10px / 300px * 100%;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navigation > h1 {
+        display: none;
+    }
+
+    .nav {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        padding-right: 140px / 940px * 100%;
+    }
+
+    .nav:last-child {
+        padding: 0;
+    }
+
+    .text {
+        display: inline-block;
+        width: 300px / 940px * 100%;
+        margin-right: 10px / 940px * 100%;
+        padding-right: 10px / 940px * 100%;
+        border-right: 1px solid silver;
+    }
+
+    .text:last-child {
+        margin-right: 0;
+        border: 0;
+    }
+
+    .text:nth-child(2n) {
+        background-color: white;
+    }
+
+    .image-featured {
+        float: left;
+    }
+
+    .gallery-img {
+        padding: 10px / 940px * 100%;
+    }
+}
+
+// @media all and (min-width: 900px) {
+//     // Font Defaults
+
+//     h1 {
+//         font-size: 40px;
+//     }
+
+//     a, p {
+//         font-size: 14px;
+//     }
+
+//     .container {
+//         margin-top: 10px / 1000px * 100%;
+//         margin-left: 10px / 954px * 100%;
+//         margin-right: 10px / 954px * 100%;
+//     }
+
+//     .navigation {
+//         width: 100%;
+//         padding: 0;
+//     }
+
+//     .navigation > h1 {
+//         display: none;
+//     }
+
+//     .nav {
+//         display: inline-block;
+//         vertical-align: middle;
+//         margin: 0;
+//         padding-right: 140px / 954px * 100%;
+//     }
+
+//     .nav:last-child {
+//         padding: 0;
+//     }
+
+//     .text {
+//         display: inline-block;
+//         width: 300px / 940px * 100%;
+//         margin-right: 10px / 940px * 100%;
+//         padding-right: 10px / 940px * 100%;
+//         border-right: 1px solid silver;
+//     }
+
+//     .text:last-child {
+//         margin-right: 0;
+//         border: 0;
+//     }
+
+//     .text:nth-child(2n) {
+//         background-color: white;
+//     }
+
+//     .image-featured {
+//         float: left;
+//     }
+
+//     .gallery-img {
+//         padding: 5px / 940px * 100%;
+//     }
+// }
+
+@media all and (min-width: 800px) {
+    // Font Defaults
+
+    h1 {
+        font-size: 30px;
+    }
+
+    a, p {
+        font-size: 20px;
+    }
+
+    .container {
+        margin-top: 10px / 1000px * 100%;
+        margin-left: 10px / 830px * 100%;
+        margin-right: 10px / 830px * 100%;
+    }
+
+    .text {
+        display: inline-block;
+        width: 300px / 830px * 100%;
+        margin-right: 10px / 830px * 100%;
+        padding-right: 10px / 830px * 100%;
+        border-right: 1px solid silver;
+    }
+
+    .text:last-child {
+        margin-right: 0;
+        border: 0;
+    }
+
+    .text:nth-child(2n) {
+        background-color: white;
+    }
+
+    .image-featured {
+        float: left;
+    }
+
+    .gallery-img {
+        padding: 5px / 830px * 100%;
     }
 }

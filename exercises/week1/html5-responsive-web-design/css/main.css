@@ -10,18 +10,152 @@ h1 {
   font-family: "Brush Script MT";
 }
 
-@media all and (max-width: 320px) {
+h1 {
+  font-size: 25px;
+  margin-top: 0;
+}
+
+a, p {
+  font-size: 25px;
+}
+
+.bg-light-blue, .text:nth-child(2n) {
+  background-color: #ccffff;
+}
+
+.link-scrub {
+  text-decoration: none;
+}
+
+.container {
+  margin: 3.125%;
+}
+
+.navigation {
+  padding: 3.33333%;
+}
+
+.nav {
+  display: block;
+  text-align: center;
+  margin-top: 1.66667%;
+}
+
+.nav:first-child {
+  margin: 0;
+}
+
+.title-page {
+  text-align: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.gallery-img {
+  float: left;
+  padding: 1.66667%;
+}
+
+@media all and (min-width: 900px) {
   h1 {
-    font-size: 25px;
-    margin-top: 0;
+    font-size: 50px;
+  }
+
+  a, p {
+    font-size: 15px;
   }
 
   .container {
-    margin: 3.125%;
+    max-width: 960px;
+    margin-top: 1.04167%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .navigation {
-    background-color: #ccffff;
-    padding: 3.33333%;
+    width: 100%;
+    padding: 0;
+  }
+
+  .navigation > h1 {
+    display: none;
+  }
+
+  .nav {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding-right: 14.89362%;
+  }
+
+  .nav:last-child {
+    padding: 0;
+  }
+
+  .text {
+    display: inline-block;
+    width: 31.91489%;
+    margin-right: 1.06383%;
+    padding-right: 1.06383%;
+    border-right: 1px solid silver;
+  }
+
+  .text:last-child {
+    margin-right: 0;
+    border: 0;
+  }
+
+  .text:nth-child(2n) {
+    background-color: white;
+  }
+
+  .image-featured {
+    float: left;
+  }
+
+  .gallery-img {
+    padding: 1.06383%;
+  }
+}
+@media all and (min-width: 800px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  a, p {
+    font-size: 20px;
+  }
+
+  .container {
+    margin-top: 1%;
+    margin-left: 1.20482%;
+    margin-right: 1.20482%;
+  }
+
+  .text {
+    display: inline-block;
+    width: 36.14458%;
+    margin-right: 1.20482%;
+    padding-right: 1.20482%;
+    border-right: 1px solid silver;
+  }
+
+  .text:last-child {
+    margin-right: 0;
+    border: 0;
+  }
+
+  .text:nth-child(2n) {
+    background-color: white;
+  }
+
+  .image-featured {
+    float: left;
+  }
+
+  .gallery-img {
+    padding: 0.60241%;
   }
 }

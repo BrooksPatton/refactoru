@@ -1,1 +1,216 @@
-h1{font-size:18px}h2{font-size:15px}h3{font-size:13px}p{font-size:13px;line-height:1.5em}.simple-border,.recent{border:1px solid black}.center-margin,.main{margin:0 auto}.emerald{background-color:#2ecc71}.nephritis{background-color:#27ae60}.wet-asphalt{background-color:#34495e}.midnight-blue{background-color:#2c3e50}.border-box{box-sizing:border-box}.container{width:100%;margin-top:20px;min-width:600px}.main{width:50%;height:500px}.title-top{height:200px;position:relative}.title-top>*{position:absolute;bottom:5px;left:5px;color:white}.band{height:5px}.link-bar{height:34px}.nav{line-height:34px;float:right}.nav>a{margin:0 10px;text-decoration:none;color:white}.title-article{margin:40px 20px}p{margin:10px 20px}.title-section{margin:40px 20px}.title-section>h3{border-bottom:1px solid #bdc3c7;padding:0 0 10px 10px}.table{width:100%}.recent{width:170px;height:500px;position:fixed;left:75%;top:10%}
+h1 {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+h3 {
+  font-size: 13px;
+}
+
+.simple-border, .recent {
+  border: 1px solid black;
+}
+
+.center-margin, .main {
+  margin: 0 auto;
+}
+
+.emerald {
+  background-color: #2ecc71;
+}
+
+.nephritis {
+  background-color: #27ae60;
+}
+
+.wet-asphalt {
+  background-color: #34495e;
+}
+
+.midnight-blue {
+  background-color: #2c3e50;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.table-border, .table th, .table td {
+  border: 1px solid gray;
+}
+
+.button {
+  padding: 10px 25px;
+  text-decoration: none;
+  color: white;
+}
+
+.button-long {
+  padding: 10px 45%;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+.peter-river {
+  background-color: #3498db;
+}
+
+.code {
+  background-color: silver;
+  padding: 10px 40px;
+  overflow: hidden;
+}
+
+.text-standard, p, li {
+  font-size: 13px;
+  line-height: 1.5em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.dim-small {
+  font-size: 0.75em;
+  color: silver;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.table-comments td {
+  padding: 3px;
+}
+
+.pomegranite {
+  background-color: #c0392b;
+}
+
+.red {
+  color: red;
+}
+
+body {
+  min-width: 700px;
+}
+
+.container {
+  min-width: 615px;
+  background-color: silver;
+}
+
+.main {
+  width: 50%;
+  background-color: white;
+  padding: 20px;
+}
+
+.title-top {
+  height: 200px;
+  position: relative;
+}
+
+.title-top > * {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  color: white;
+}
+
+.band {
+  height: 5px;
+}
+
+.link-bar {
+  height: 34px;
+}
+
+.nav {
+  line-height: 34px;
+  float: right;
+}
+
+.nav > a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.title-article {
+  margin: 40px 20px;
+}
+
+p {
+  margin: 10px 20px;
+}
+
+.title-section, .title-comments {
+  margin: 40px 20px;
+}
+
+.title-section > h3, .title-comments > h3 {
+  border-bottom: 1px solid #bdc3c7;
+  padding: 0 0 10px 10px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table th {
+  background-color: gray;
+  padding: 10px;
+}
+
+.table td {
+  padding: 10px;
+}
+
+.recent {
+  width: 211px;
+  position: fixed;
+  left: 77%;
+  top: 10%;
+  background-color: white;
+}
+
+.title-comments {
+  border-bottom: 1px solid silver;
+}
+
+.legend {
+  position: relative;
+  top: 20px;
+  background-color: white;
+  width: 85px;
+  text-align: center;
+}
+
+.form {
+  margin-left: 40%;
+}
+
+.textarea {
+  width: 95%;
+  height: 10em;
+  margin: 10px 10px 40px 10px;
+}
+
+.img-profile {
+  float: left;
+  padding: 10px;
+}
+
+.comment-stream {
+  padding-top: 40px;
+}
+
+.comment-reply {
+  margin-left: 25%;
+  border-left: 1px solid silver;
+}

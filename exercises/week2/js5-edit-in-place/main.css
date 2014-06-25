@@ -1,0 +1,23 @@
+/*Base*/
+* {
+	Box-sizing: Border-box;
+}
+
+body {
+	background-color: #ecf0f1;
+}
+
+/*Layout*/
+.container {
+	max-width: 960px;
+	padding: 25px;
+}
+
+/*Module*/
+
+
+/*State*/
+
+
+/*Theme*/
+
