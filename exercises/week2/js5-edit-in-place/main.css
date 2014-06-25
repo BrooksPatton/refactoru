@@ -11,10 +11,26 @@ body {
 .container {
 	max-width: 960px;
 	padding: 25px;
+	background-color: #fff;
+	margin: 25px auto;
+}
+
+.profile-title {
+	margin-left: 200px;
 }
 
 /*Module*/
+.float-left {
+	float: left;
+}
 
+.c-asbestos {
+	color: #7f8c8d;
+}
+
+.section-title {
+	border-bottom: 1px solid black;
+}
 
 /*State*/
 
