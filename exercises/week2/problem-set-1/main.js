@@ -11,6 +11,10 @@ var letterCapitalize = function(str) {
 	return str.split(' ').map(capitalizeFirstLetter).join(" ");
 };
 
+var wordCount = function(sentence) {
+	return sentence.split(" ").length;
+};
+
 
 $(document).on('ready', function() {
   
