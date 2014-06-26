@@ -2,11 +2,40 @@
 
 
 /*Layout*/
-
+.popup {
+	position: fixed;
+	top: 25%;
+	left: 25%;
+	background-color: lightgreen;
+	padding: 25px;
+	border: 1px solid black;
+}
 
 /*Module*/
 .c-pink {
 	color: pink;
+}
+
+.button {
+	border: 1px solid black;
+	padding: 10px 50px;
+	background-color: skyblue;
+	width: 10px;
+	height: 20px;
+}
+
+.big {
+	padding: 50px 150px;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.close {
+	position: absolute;
+	right: 5px;
+	top: 5px;
 }
 
 /*State*/

@@ -32,4 +32,13 @@ $(document).on('ready', function() {
 			return false;
 		}
 	});
+
+	$("#big-button").on('click', function(event) {
+		var html = "<div class='popup' id='popup'><div class='close'>X</div><h1>You clicked the button!</h1></div>";
+		$(".part3").append(html);
+
+		$(".close").on('click', function(event) {
+			$("#popup").remove();
+		});
+	});
 });
