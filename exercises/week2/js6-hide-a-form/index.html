@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JS6 - Hide a Form</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+	<div class="container">
+		
+		<div class="edit-profile">
+			<h1 class="title-profile">Edit Profile</h1>
+			<table>
+				<form>
+					<tr>
+						<td class="edit-form align-right">Name:</td>
+						<td><input type="text" id="edit-name"></td>
+					</tr>
+					<tr>
+						<td class="edit-form align-right">Bio:</td>
+						<td><textarea id="edit-bio"></textarea></td>
+					</tr>
+					<tr>
+						<td class="edit-form align-right">Favorite Books:</td>
+						<td><input type="text" id="edit-books"></td>
+					</tr>
+					<tr>
+						<td class="edit-form align-right">Favorite JavaScript Libraries:</td>
+						<td><input type="text" id="edit-js-libraries"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							 <div class="edit-buttons">
+								<input type="submit" class="c-dark" id="edit-submit">
+								<input type="button" class="c-dark" id="edit-cancel" value="cancel">
+							</div>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</div>
+
+		<div class="profile">
+			
+			<div class="float-left profile-img">
+				<img src="http://placehold.it/150x150" alt="A placeholder image">
+			</div>
+			
+			<h1 id="name">Name</h1>
+			
+			<h2 class="subtitle clearfix">Bio</h2>
+			<p id="bio"></p>
+
+			<h2 class="subtitle">Favorite Books</h2>
+			<p id="books"></p>
+
+			<h2 class="subtitle">Favorite JavaScript Libraries</h2>
+			<p id="js-libraries"></p>
+
+		</div>
+
+	</div>
+	
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
