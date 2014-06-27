@@ -1,3 +1,4 @@
+
 var hideTextBlock = function(obj) {
 	$("#" + obj.id).hide();
 }
@@ -44,5 +45,17 @@ $(document).on('ready', function() {
   	};
   	hideTextBlock(clickedOnId);
   	insertTextField(clickedOnId);
+
+  });
+
+	$.fn.editable.defaults.mode = "inline";
+
+  $("#name").editable({
+  	type: "text",
+  	title: "Enter Name",
+  	success: function(response, newValue) {
+  		$("#name").text(newValue);
+  		console.log(response);
+  	}
   });
 });
