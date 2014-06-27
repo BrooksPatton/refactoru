@@ -1,0 +1,52 @@
+/*Base*/
+* {
+  Box-sizing: Border-box;
+}
+
+body {
+  background-color: #ecf0f1;
+}
+
+h1, h2, h3, h4, .input {
+  margin: 16px 0;
+}
+
+/*Layout*/
+.container {
+  max-width: 960px;
+  padding: 25px;
+  background-color: #fff;
+  margin: 25px auto;
+}
+
+.profile-title {
+  margin-left: 200px;
+}
+
+/*Module*/
+.float-left {
+  float: left;
+}
+
+.c-asbestos {
+  color: #7f8c8d;
+}
+
+.section-title {
+  border-bottom: 1px solid black;
+}
+
+.block {
+  display: block;
+}
+
+.clearfix {
+  clear: left;
+}
+
+/*State*/
+/*Theme*/
+.name {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
