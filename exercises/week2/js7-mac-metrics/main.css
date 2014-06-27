@@ -1,0 +1,32 @@
+/*Base*/
+* {
+	Box-sizing: Border-box;
+}
+
+body {
+	background-color: #000;
+}
+
+/*Layout*/
+.container {
+	width: 600px;
+	margin: 50px auto;
+	background-color: #aaa;
+	overflow: hidden;
+	padding: 50px;
+}
+
+.buttons {
+	position: fixed;
+	left: 10px;
+	top: 10px;
+}
+
+/*Module*/
+
+
+/*State*/
+
+
+/*Theme*/
+
