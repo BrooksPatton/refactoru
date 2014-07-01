@@ -32,7 +32,14 @@ var problem2 = function problem2(arr) {
 	});
 };
 
-
+var problem3 = function problem3(arr) {
+	var filtered = arr.filter(function(item) {
+		return item.city === 'Boulder';
+	});
+	filtered.forEach(function(item) {
+		console.log(item.name + ' is from ' + item.city);
+	});
+};
 
 
 
