@@ -1,0 +1,68 @@
+.container {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.outer-shell {
+	background: #7f8c8d;
+	height: 200px;
+	padding: 50px;
+}
+
+.inner-shell {
+	background: #000;
+	height: 100%;
+}
+
+.labels {
+	color: #fff;
+	width: 50px;
+	float: left;
+}
+
+.labels > div {
+	margin-bottom: 73px;
+}
+
+.labels > div:last-child {
+	margin-bottom: 0;
+}
+
+.labels-am {
+	width: 40px;
+}
+
+.labels-pm {
+	width: 40px;
+}
+
+.screen {
+	width: 345px;
+	line-height: 200px;
+	float: right;
+	background: #c0392b;
+	height: 200px;
+	text-align: center;
+}
+
+.label-indicator {
+	background: #c0392b;
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	float: right;
+}
+
+.clock-text {
+	font-size: 7em;
+	color: #e74c3c;
+}
+
+.frequencies {
+	word-spacing: 20px;
+	color: #fff;
+}
+
+.tab {
+	margin-left: 50px;
+}
