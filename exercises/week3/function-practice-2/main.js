@@ -44,6 +44,17 @@ var vowels = function vowels(str) {
 	});
 };
 
+var twins = function twins(arr) {
+	while(arr.length > 0) {
+		var first = arr.shift();
+		if(first !== arr[0] || arr[0] === undefined) {
+			return false;
+		}
+		arr.shift();
+	}
+	return true;
+};
+
 $(document).on('ready', function() {
   
 });
