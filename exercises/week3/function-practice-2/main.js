@@ -55,6 +55,13 @@ var twins = function twins(arr) {
 	return true;
 };
 
+var or = function or(arr) {
+	if(arr.indexOf(true) >= 0) {
+		return true;
+	}
+	return false;
+}
+
 $(document).on('ready', function() {
   
 });
