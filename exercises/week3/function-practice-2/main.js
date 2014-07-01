@@ -18,9 +18,16 @@ var keyValue = function keyValue(arg1, arg2) {
 
 var negativeIndex = function negativeIndex(arr, negativeNumber) {
 	return arr[negativeNumber + arr.length];
-}
+};
 
-
+var removeM = function removeM(str) {
+	var characters = str.split("");
+	return characters.filter(function(index) {
+		if(index.toLowerCase() !== 'm') {
+			return index;
+		}
+	});
+};
 
 
 $(document).on('ready', function() {
