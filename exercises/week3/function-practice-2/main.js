@@ -35,6 +35,14 @@ var printObject = function printObject(obj) {
 	}
 };
 
+var vowels = function vowels(str) {
+	return str.split('').filter(function(letter) {
+		var vowels = ['a', 'e', 'i', 'o', 'u'];
+		if( vowels.indexOf(letter) >= 0 ) {
+			return true;
+		}
+	});
+};
 
 $(document).on('ready', function() {
   
