@@ -41,7 +41,14 @@ var problem3 = function problem3(arr) {
 	});
 };
 
-
+var problem4 = function problem4(arr) {
+	var old = arr.filter(function(item) {
+		return item.age > 25;
+	});
+	old.forEach(function(item) {
+		console.log(item.name + ' is older than 25');
+	});
+};
 
 
 $(document).on('ready', function() {
