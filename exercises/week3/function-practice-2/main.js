@@ -10,6 +10,19 @@ var totalLetters = function totalLetters(arr) {
 	return count;
 };
 
+var keyValue = function keyValue(arg1, arg2) {
+	var newObject = {};
+	newObject[arg1] = arg2;
+	return newObject;
+};
+
+var negativeIndex = function negativeIndex(arr, negativeNumber) {
+	return arr[negativeNumber + arr.length];
+}
+
+
+
+
 $(document).on('ready', function() {
   
 });
