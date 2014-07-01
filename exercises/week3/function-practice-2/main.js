@@ -29,6 +29,12 @@ var removeM = function removeM(str) {
 	});
 };
 
+var printObject = function printObject(obj) {
+	for(var i in obj) {
+		console.log(i + ' is ' + obj[i]);
+	}
+};
+
 
 $(document).on('ready', function() {
   
