@@ -1,5 +1,31 @@
 /*----Global Variables------------------------------------------------------------*/
 /*----Callback Functions----------------------------------------------------------*/
+var runClock = function runClock (event) {
+	// Clear the clock display
+	$('.clock-text').remove();
+	// Clear the am pm indicator
+	$('.label-indicator').remove();
+	var date = new Date();
+	// get the current time
+	var hours24 = date.getHours();
+	var minutes = date.getMinutes();
+	// convert the time to 12-hour time format
+	if(hours24 > 12) {
+		var hours12 = hours24 - 12;
+		var pm = true;
+	}
+	// Set am or pm
+	if(pm) {
+		$('.labels-pm').append( labelIndicator() );
+	}
+	else {
+		$('.labels-am').append( labelIndicator() );
+	}
+
+	// Set the clock time
+	$('.screen').append( clockText( {hours:hours12, minutes: minutes} ) );
+}
+
 /*----Function Declarations-------------------------------------------------------*/
 var createClock = function createClock() {
 	var outerShell = $('<div class="outer-shell"></div>');
@@ -28,6 +54,7 @@ var clockText = function clockText(time) {
 
 $(document).on('ready', function() {
 	$('.container').append( createClock() );
-	$('.labels-auto').append( labelIndicator() );
-	$('.screen').append( clockText( {hours:10, minutes: 32} ) );
+	// Initialize clock
+	runClock();
+	setInterval(runClock, 60000);
 });
