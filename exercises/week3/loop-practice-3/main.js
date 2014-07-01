@@ -24,7 +24,13 @@ var problem1 = function problem1(arr) {
 	arr.forEach(function(item) {
 		console.log(item.age);
 	});
-}
+};
+
+var problem2 = function problem2(arr) {
+	arr.forEach(function(item) {
+		console.log(item.name + ', ' + item.city);
+	});
+};
 
 
 
