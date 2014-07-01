@@ -60,7 +60,18 @@ var or = function or(arr) {
 		return true;
 	}
 	return false;
-}
+};
+
+var unique = function unique(arr) {
+	var uniqueArray = [];
+	arr.forEach(function(item) {
+		if(uniqueArray.indexOf(item) === -1) {
+			uniqueArray.push(item);
+		}
+	});
+	return uniqueArray;
+};
+
 
 $(document).on('ready', function() {
   
