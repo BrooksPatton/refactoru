@@ -1,0 +1,13 @@
+Plan:
+  The infinite agenda app displays a calendar to the screen. One day at a time. A User can add events to each day. If they need to scroll down to access future days, they can. There is no limit to how far they can scroll. When they scroll back up to the top, their stuff is there.
+
+Data structure --
+  ☐ An appointment object that has the following keys and values
+  ☐ time - time of day that the appointment is on
+  ☐ description - User inputted description of the appointment
+  ☐ location - where the appointment will be
+  ☐ date - the date that the appointment will be
+
+  --- ✄ -----------------------
+
+  
