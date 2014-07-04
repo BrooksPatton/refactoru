@@ -14,7 +14,7 @@ Data structure --
     ✔ print a week out at a time onto the screen @done (14-07-04 13:10)
     ✔ When the User scrolls down, load another week into the screen @done (14-07-04 13:43)
     ✔ Load the calendar data from storage @done (14-07-04 14:02)
-    ☐ Allow the User to create a new calendar event
+    ✔ Allow the User to create a new calendar event @done (14-07-04 15:29)
     ☐ Delete the calendar event
     ☐ Update the calendar event
     ☐ Save the data to local storage
