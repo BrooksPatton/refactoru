@@ -60,6 +60,7 @@ var calendar = (function namespace() {
 		$(this).closest('.day').append('<div class="event"><p>' + newEvent.location + '</p>');
 		$(this).closest('.day').find('.addEntry').removeAttr('disabled');
 		$(this).closest('.day').find('.addEvent').remove();
+		saveData();
 	}
 
 	var deleteEvents = function deleteEvents(e) {
@@ -69,6 +70,11 @@ var calendar = (function namespace() {
 		_.chain(data).where({date: eventDate}).each(function(item) {
 			data.splice(_.indexOf(data, item), 1);
 		});
+		saveData();
+	};
+
+	var saveData = function saveData() {
+		localStorage.setItem('data', JSON.stringify(data));
 	};
 
 	loadData();
