@@ -23,7 +23,8 @@ var calendar = (function namespace() {
 					day.append('<p>' + item.location + '</p></div>');
 			});
 			}
-			day.append('<div class=buttons><button class="addEntry">New Event</button></div>');
+			day.append('<div class="buttons"><button class="addEntry">New Event</button></div>');
+			day.append('<div class="buttons"><button class="delete">Delete Events</button></div>');
 			week.append(day);
 		}
 		date.setDate(i);
@@ -52,6 +53,7 @@ var calendar = (function namespace() {
 		newEvent.description = $(this).closest('form').find('input[name=description]').val();
 		newEvent.time = $(this).closest('form').find('input[name=time]').val();
 		newEvent.location = $(this).closest('form').find('input[name=location]').val();
+		newEvent.date = $(this).closest('.day').find('h2').text();
 		data.push(newEvent);
 		$(this).closest('.day').append('<div class="event"><p>' + newEvent.description + '</p>');
 		$(this).closest('.day').append('<div class="event"><p>' + newEvent.time + '</p>');
@@ -60,6 +62,15 @@ var calendar = (function namespace() {
 		$(this).closest('.day').find('.addEvent').remove();
 	}
 
+	var deleteEvents = function deleteEvents(e) {
+		e.preventDefault();
+		var eventDate = $(this).closest('.day').find('h2').text();
+		$(this).closest('.day').find('p').remove();
+		_.chain(data).where({date: eventDate}).each(function(item) {
+			data.splice(_.indexOf(data, item), 1);
+		});
+	};
+
 	loadData();
 
 	return {
@@ -67,6 +78,7 @@ var calendar = (function namespace() {
 		scrollToBottom: scrollToBottom,
 		showAddEventForm: showAddEventForm,
 		submitNewEvent: submitNewEvent,
-		data: data
+		data: data,
+		deleteEvents: deleteEvents
 	};
 })();
