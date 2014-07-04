@@ -17,5 +17,5 @@ Data structure --
     ✔ Allow the User to create a new calendar event @done (14-07-04 15:29)
     ✔ Delete the calendar event @done (14-07-04 16:24)
     ✔ Update the calendar event @done (14-07-04 16:25)
-    ☐ Save the data to local storage
+    ✔ Save the data to local storage @done (14-07-04 16:48)
     ☐ Load from local storage

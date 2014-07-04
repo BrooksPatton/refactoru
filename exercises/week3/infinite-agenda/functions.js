@@ -3,7 +3,10 @@ var calendar = (function namespace() {
 	var data = [];
 
 	var loadData = function loadData() {
-		data = testData;
+		data = JSON.parse(localStorage.getItem('data'));
+		if(!data) {
+			data = [];
+		}
 	};
 
 	var generateWeek = function generateWeek() {
