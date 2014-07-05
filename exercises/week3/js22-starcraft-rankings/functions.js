@@ -1,36 +1,34 @@
 var starcraft = (function namespace() {
 	var generateTable = function generateTable(data) {
-		var table = $('<table class="display" id="table_id">');
-		table.append(generateTableHead(data.cols));
-		table.append(generateTableBody(data.data));
-		return table;
+		insertTableShell();
+		var dataColumns = prepDataColumns(data.cols);
+		initTable(dataColumns, data.data);
 	};
 
-	var generateTableHead = function generateTableHead(data) {
-		var head = $('<thead><tr>');
-		data.forEach(function(item) {
-			head.append('<td>' + item + '</td>');
+	var insertTableShell = function insertTableShell() {
+		$('.container').append('<table class="display" id="starcraft"</table>');
+	};
+
+	var prepDataColumns = function prepDataColumns(items) {
+		var cols = [];
+		items.forEach(function(title) {
+			cols.push({title: title});
 		});
-		return head;
-	};
+		return cols;
+	}
 
-	var generateTableBody = function generateTableBody (data) {
-		var body = $('<tbody>');
-		data.forEach(function(player) {
-			var row = $('<tr>');
-			player.forEach(function(item) {
-				var td = $('<td>' + item + '</td>');
-				row.append(td);
-			});
-			body.append(row);
+	var initTable = function initTable(columnTitles, data) {
+		$('#starcraft').DataTable({
+			columns: columnTitles,
+			data: data,
+			pagingType: 'full_numbers',
+			lengthMenu: [10, 20, 50, 100],
+			pageLength: 20
 		});
-		return body;
 	};
-
-	
 
 	return {
-		generateTable: generateTable
+		generateTable: generateTable,
 	};
 
 })();
