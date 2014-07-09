@@ -1,0 +1,33 @@
+/* global changes */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 25px;
+}
+
+/* Layout */
+header {
+	text-align: center;
+}
+
+.add-quote {
+	float: right;
+}
+
+.author {
+	margin-left: 25px;
+	font-style: italic;
+}
+
+/* Module */
+.inline-block {
+	display: inline-block;
+}
+
+/* Theme */
+.vote {
+	width: 20px;
+	-webkit-transform: rotate(90deg);
+}
