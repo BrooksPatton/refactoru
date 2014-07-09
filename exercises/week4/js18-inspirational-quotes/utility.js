@@ -43,11 +43,17 @@ var Utility = (function() {
 		$('.container').removeClass('hidden');
 	};
 
+	var showRandomQuote = function() {
+		var quote = Quotes.getRandomQuote();
+		
+	};
+
 	return {
 		addQuote: addQuote,
 		upvote: upvote,
 		downvote: downvote,
 		showQuotesByAuthor: showQuotesByAuthor,
-		showAllQuotes: showAllQuotes
+		showAllQuotes: showAllQuotes,
+		showRandomQuote: showRandomQuote
 	};
 })();

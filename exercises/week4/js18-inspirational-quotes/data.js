@@ -16,6 +16,7 @@ var Quotes = (function() {
 
 	var display = function() {
 		$('#display-quotes').empty();
+		sortQuotes();
 		quotes.forEach(function(quote) {
 			$('#display-quotes').append(generateQuoteHtml(quote));
 		});
@@ -62,6 +63,12 @@ var Quotes = (function() {
 
 	var getQuotesByAuthor = function(jQueryObject) {
 		return _.where(quotes, {author: jQueryObject.text()});
+	};
+
+	var sortQuotes = function() {
+		quotes = _.sortBy(quotes, function(item) {
+			return -item.rating;
+		});
 	};
 
 	return {

@@ -5,5 +5,6 @@ $(document).on('ready', function() {
 	$('#display-quotes').on('click', 'div .downvote', Utility.downvote);
 	$('#display-quotes').on('click', 'div .author', Utility.showQuotesByAuthor);
 	$('.author-page').on('click', 'button', Utility.showAllQuotes);
+	$('#random-quote').on('click', 'button', Utility.showRandomQuote);
 	Quotes.display();
 });
