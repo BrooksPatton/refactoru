@@ -3,4 +3,7 @@ $(document).on('ready', function() {
 	$('#display-quotes').on('click', 'div button', Quotes.deleteQuote);
 	$('#display-quotes').on('click', 'div .upvote', Utility.upvote);
 	$('#display-quotes').on('click', 'div .downvote', Utility.downvote);
+	$('#display-quotes').on('click', 'div .author', Utility.showQuotesByAuthor);
+	$('.author-page').on('click', 'button', Utility.showAllQuotes);
+	Quotes.display();
 });

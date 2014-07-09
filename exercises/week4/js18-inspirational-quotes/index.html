@@ -12,33 +12,42 @@
 		<h1>Inspirational Quotes</h1>
 	</header>
 
-	<section id='random-quote' class='random-quote'>
-		<button>Random Quote</button>
-	</section>
+	<div class="container">
 
-	<section class='add-quote'>
-		<form id='add-quote'>
-			<div>
-				Quote
-			</div>
-			<div>
-				<input type="text" name='quote' placeholder='Quote'>
-			</div>
-			<div>
-				Author
-			</div>
-			<div>
-				<input type="text" name='author' placeholder='Author'>
-			</div>
-			<div>
-				<button>Submit Quote</button>
-			</div>
-		</form>
-	</section>
+		<section id='random-quote' class='random-quote'>
+			<button>Random Quote</button>
+		</section>
 
-	<section id='display-quotes'>
+		<section class='add-quote'>
+			<form id='add-quote'>
+				<div>
+					Quote
+				</div>
+				<div>
+					<input type="text" name='quote' placeholder='Quote'>
+				</div>
+				<div>
+					Author
+				</div>
+				<div>
+					<input type="text" name='author' placeholder='Author'>
+				</div>
+				<div>
+					<button>Submit Quote</button>
+				</div>
+			</form>
+		</section>
 
-	</section>
+		<section id='display-quotes'>
+
+		</section>
+
+	</div>
+
+	<div class="author-page hidden">
+		<button>Back</button>
+		<div class="author-quotes"></div>
+	</div>
 	
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>

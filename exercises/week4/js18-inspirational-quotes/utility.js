@@ -26,9 +26,28 @@ var Utility = (function() {
 		Quotes.display();
 	};
 
+	var showQuotesByAuthor = function() {
+		$('.container').addClass('hidden');
+		$('.author-page').removeClass('hidden');
+		var authorsQuotes = Quotes.getQuotesByAuthor($(this));
+		$('.author-quotes').append('<h2>' + $(this).text() + '</h2>');
+		authorsQuotes.forEach(function(item) {
+			$('.author-quotes').append('<p>' + item.quote + '</p>');
+		});
+		console.log($(this).text());
+	};
+
+	var showAllQuotes = function() {
+		$('.author-quotes').empty();
+		$('.author-page').addClass('hidden');
+		$('.container').removeClass('hidden');
+	};
+
 	return {
 		addQuote: addQuote,
 		upvote: upvote,
-		downvote: downvote
+		downvote: downvote,
+		showQuotesByAuthor: showQuotesByAuthor,
+		showAllQuotes: showAllQuotes
 	};
 })();

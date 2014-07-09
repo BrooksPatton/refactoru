@@ -1,5 +1,16 @@
 var Quotes = (function() {
-	var quotes = [];
+	var quotes = [{
+		author: 'picard',
+		quote: 'Make it so',
+		id: 0,
+		rating: 0},
+		{
+			author: 'picard',
+			quote: 'Engange',
+			id: 1,
+			rating: 0
+		}];
+
 	var id = 0;
 	var recycleBin = {};
 
@@ -49,6 +60,10 @@ var Quotes = (function() {
 		Quotes.data[index].rating--;
 	};
 
+	var getQuotesByAuthor = function(jQueryObject) {
+		return _.where(quotes, {author: jQueryObject.text()});
+	};
+
 	return {
 		data: quotes,
 		display: display,
@@ -56,6 +71,7 @@ var Quotes = (function() {
 		deleteQuote: deleteQuote,
 		validate: validateform,
 		incrementRating: incrementRating,
-		decrementRating: decrementRating
+		decrementRating: decrementRating,
+		getQuotesByAuthor: getQuotesByAuthor
 	};
 })();

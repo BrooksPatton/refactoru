@@ -36,6 +36,10 @@ header {
 	cursor: pointer;
 }
 
+.hidden {
+	display: none;
+}
+
 /* State */
 .upvote:active {
 	color: red;
