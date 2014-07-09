@@ -31,3 +31,16 @@ header {
 	width: 20px;
 	-webkit-transform: rotate(90deg);
 }
+
+.upvote, .downvote {
+	cursor: pointer;
+}
+
+/* State */
+.upvote:active {
+	color: red;
+}
+
+.downvote:active {
+	color: yellow;
+}

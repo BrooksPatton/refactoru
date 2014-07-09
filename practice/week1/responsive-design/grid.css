@@ -15,6 +15,14 @@
 	padding: 10px;
 }
 
+.orange {
+	background-color: orange;
+}
+
+.green {
+	background-color: green;
+}
+
 @media screen and (min-width: 150px) {
 	/* Define actual column sizes */
 	.col-1-3 {
