@@ -45,7 +45,7 @@ var Utility = (function() {
 
 	var showRandomQuote = function() {
 		var quote = Quotes.getRandomQuote();
-		
+		$.colorbox({html:quote});
 	};
 
 	return {

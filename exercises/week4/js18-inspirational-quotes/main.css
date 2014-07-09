@@ -40,6 +40,10 @@ header {
 	display: none;
 }
 
+.undelete {
+	cursor: pointer;
+}
+
 /* State */
 .upvote:active {
 	color: red;

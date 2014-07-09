@@ -38,7 +38,12 @@ var Quotes = (function() {
 		});
 		Quotes.data = newQuotes;
 		$(this).closest('div').remove();
+		showUndeleteButton();
 	};
+
+	var showUndeleteButton = function() {
+		$('.add-quote').append('<div><h3 class="undelete">Undo Delete</h3></div>');
+	}
 
 	var validateform = function () {
 		if($('#add-quote [name="quote"]').val() || $('#add-quote [name="author"]').val()) {
@@ -71,6 +76,12 @@ var Quotes = (function() {
 		});
 	};
 
+	var getRandomQuote = function() {
+		var quoteObject = quotes[_.random(0, quotes.length - 1)];
+		var html = $('<div><h3>' + quoteObject.author + '</h3><p>' + quoteObject.quote + '</p></div>');
+		return html;
+	};
+
 	return {
 		data: quotes,
 		display: display,
@@ -79,6 +90,7 @@ var Quotes = (function() {
 		validate: validateform,
 		incrementRating: incrementRating,
 		decrementRating: decrementRating,
-		getQuotesByAuthor: getQuotesByAuthor
+		getQuotesByAuthor: getQuotesByAuthor,
+		getRandomQuote: getRandomQuote
 	};
 })();
