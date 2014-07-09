@@ -48,12 +48,19 @@ var Utility = (function() {
 		$.colorbox({html:quote});
 	};
 
+	var undeleteQuote = function() {
+		Quotes.data.push(Quotes.recycleBin);
+		$('.undelete').remove();
+		Quotes.display();
+	};
+
 	return {
 		addQuote: addQuote,
 		upvote: upvote,
 		downvote: downvote,
 		showQuotesByAuthor: showQuotesByAuthor,
 		showAllQuotes: showAllQuotes,
-		showRandomQuote: showRandomQuote
+		showRandomQuote: showRandomQuote,
+		undeleteQuote: undeleteQuote
 	};
 })();

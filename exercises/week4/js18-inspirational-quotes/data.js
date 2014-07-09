@@ -91,6 +91,7 @@ var Quotes = (function() {
 		incrementRating: incrementRating,
 		decrementRating: decrementRating,
 		getQuotesByAuthor: getQuotesByAuthor,
-		getRandomQuote: getRandomQuote
+		getRandomQuote: getRandomQuote,
+		recycleBin: recycleBin
 	};
 })();
