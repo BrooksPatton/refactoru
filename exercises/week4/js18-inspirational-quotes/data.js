@@ -1,16 +1,4 @@
 var Quotes = (function() {
-	var quotes = [{
-		author: 'picard',
-		quote: 'Make it so',
-		id: 0,
-		rating: 0},
-		{
-			author: 'picard',
-			quote: 'Engange',
-			id: 1,
-			rating: 0
-		}];
-
 	var id = 0;
 	var recycleBin = {};
 
@@ -39,6 +27,7 @@ var Quotes = (function() {
 		Quotes.data = newQuotes;
 		$(this).closest('div').remove();
 		showUndeleteButton();
+		Utility.save();
 	};
 
 	var showUndeleteButton = function() {
@@ -57,6 +46,7 @@ var Quotes = (function() {
 		var quote = _.findWhere(Quotes.data, {id: Number(id)});
 		var index = _.indexOf(Quotes.data, quote);
 		Quotes.data[index].rating++;
+		Utility.save();
 	};
 
 	var decrementRating = function(item) {
@@ -64,6 +54,7 @@ var Quotes = (function() {
 		var quote = _.findWhere(Quotes.data, {id: Number(id)});
 		var index = _.indexOf(Quotes.data, quote);
 		Quotes.data[index].rating--;
+		Utility.save();
 	};
 
 	var getQuotesByAuthor = function(jQueryObject) {

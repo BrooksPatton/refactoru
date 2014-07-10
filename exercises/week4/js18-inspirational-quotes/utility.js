@@ -54,6 +54,18 @@ var Utility = (function() {
 		Quotes.display();
 	};
 
+	var saveToLocalStorage = function() {
+		var stringified = JSON.stringify(Quotes.data);
+		localStorage.setItem('quotes', stringified);
+	}
+
+	var loadFromLocalStorage = function() {
+		var stringified = localStorage.getItem('quotes');
+		var objectified = JSON.parse(stringified);
+		Quotes.data = objectified;
+		Quotes.display();
+	}
+
 	return {
 		addQuote: addQuote,
 		upvote: upvote,
@@ -61,6 +73,8 @@ var Utility = (function() {
 		showQuotesByAuthor: showQuotesByAuthor,
 		showAllQuotes: showAllQuotes,
 		showRandomQuote: showRandomQuote,
-		undeleteQuote: undeleteQuote
+		undeleteQuote: undeleteQuote,
+		save: saveToLocalStorage,
+		load: loadFromLocalStorage
 	};
 })();

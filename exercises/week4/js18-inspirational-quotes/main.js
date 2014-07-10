@@ -1,4 +1,6 @@
 $(document).on('ready', function() {
+	Utility.load();
+
 	$('#add-quote').on('click', 'button', Utility.addQuote);
 	$('#display-quotes').on('click', 'div button', Quotes.deleteQuote);
 	$('#display-quotes').on('click', 'div .upvote', Utility.upvote);
@@ -7,5 +9,6 @@ $(document).on('ready', function() {
 	$('.author-page').on('click', 'button', Utility.showAllQuotes);
 	$('#random-quote').on('click', 'button', Utility.showRandomQuote);
 	$('.add-quote').on('click', '.undelete', Utility.undeleteQuote);
+
 	Quotes.display();
 });
