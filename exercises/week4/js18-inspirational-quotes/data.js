@@ -1,11 +1,12 @@
 var Quotes = (function() {
+	var quotes = [];
 	var id = 0;
 	var recycleBin = {};
 
 	var display = function() {
 		$('#display-quotes').empty();
 		sortQuotes();
-		quotes.forEach(function(quote) {
+		Quotes.data.forEach(function(quote) {
 			$('#display-quotes').append(generateQuoteHtml(quote));
 		});
 	};
@@ -20,14 +21,13 @@ var Quotes = (function() {
 
 	var deleteQuote = function() {
 		var num = $(this).closest('div').attr('data-id');
-		recycleBin = _.findWhere(quotes, {id: Number(num)});
-		var newQuotes = _.reject(quotes, function(item) {
-			return item === recycleBin;
+		Quotes.recycleBin = _.findWhere(Quotes.data, {id: Number(num)});
+		var newQuotes = _.reject(Quotes.data, function(item) {
+			return item === Quotes.recycleBin;
 		});
 		Quotes.data = newQuotes;
 		$(this).closest('div').remove();
 		showUndeleteButton();
-		Utility.save();
 	};
 
 	var showUndeleteButton = function() {
@@ -46,7 +46,6 @@ var Quotes = (function() {
 		var quote = _.findWhere(Quotes.data, {id: Number(id)});
 		var index = _.indexOf(Quotes.data, quote);
 		Quotes.data[index].rating++;
-		Utility.save();
 	};
 
 	var decrementRating = function(item) {
@@ -54,7 +53,6 @@ var Quotes = (function() {
 		var quote = _.findWhere(Quotes.data, {id: Number(id)});
 		var index = _.indexOf(Quotes.data, quote);
 		Quotes.data[index].rating--;
-		Utility.save();
 	};
 
 	var getQuotesByAuthor = function(jQueryObject) {
@@ -68,7 +66,7 @@ var Quotes = (function() {
 	};
 
 	var getRandomQuote = function() {
-		var quoteObject = quotes[_.random(0, quotes.length - 1)];
+		var quoteObject = Quotes.data[_.random(0, Quotes.data.length - 1)];
 		var html = $('<div><h3>' + quoteObject.author + '</h3><p>' + quoteObject.quote + '</p></div>');
 		return html;
 	};
