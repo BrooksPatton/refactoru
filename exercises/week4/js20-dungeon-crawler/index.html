@@ -1,15 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Untitled</title>
-  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="main.css">
+	<meta charset="utf-8">
+	<title>Dungeon Crawler</title>
+	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://summer2014-refactoru-students.herokuapp.com/public/fontello/css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+
+	<div class="container">
+		
+		<header class='page-header center-text'>
+			<h1>Dungeon Crawler</h1>
+		</header>
+
+		<section class='row'>
+
+			<!-- Player window -->
+			<div class="col-md-3 border">
+				
+				<!-- Player status -->
+				<div id="player-status" class="center-text">
+					<i class='icon-male icon-medium'></i>
+				</div>
+
+				<!-- Weapons section -->
+				<section>
+					
+					<h3>Weapons:</h3>
+
+					<!-- Weapons list -->
+					<div id="weapons-list" class="col-md-offset-1">
+						<!-- <button class="btn btn-primary">Sword</button> -->
+					</div>
+
+				</section>
+
+				<!-- Items section -->
+				<section>
+
+					<h3>Items:</h3>
+					
+					<!-- Items list -->
+					<div id="items-list" class="col-md-offset-1">
+						<!-- <button class="btn btn-danger">Health potion</button> -->
+					</div>
+
+				</section>
+
+					<!-- Player statistics -->
+					<section>
+
+						<h3>Stats:</h3>
+
+						<!-- Level -->
+						<div>
+							<ul class="list-group">
+
+								<!-- Level -->
+								<li class="list-group-item">
+									<span class='badge' id='player-level'></span>
+									Level
+								</li>
+
+								<!-- Current health -->
+								<li class="list-group-item">
+									<span class='badge' id='player-current-health'></span>
+									Current health
+								</li>
+
+								<!-- Max health -->
+								<li class="list-group-item">
+									<span class='badge' id='player-maximum-health'></span>
+									Maximum health
+								</li>
+
+								<!-- Strength -->
+								<li class="list-group-item">
+									<span class='badge' id='player-strength'></span>
+									Strength
+								</li>
+
+							</ul>
+						</div>
+
+					</section>
+
+			</div>
+
+			<!-- Main content -->
+			<div class="col-md-6">
+				
+			</div>
+
+			<!-- Dungeon map -->
+			<div class="col-md-3">
+				
+			</div>
+			
+		</section>
+
+	</div>
 	
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script src="main.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="main.js"></script>
 
 </body>
 </html>

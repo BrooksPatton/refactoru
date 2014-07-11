@@ -1,6 +1,6 @@
 // Constant declaration
-var HEAT_SPREAD_RATE = 500;
-var FIRE_SPREAD_RATE = 1000;
+var HEAT_SPREAD_RATE = 100;
+var FIRE_SPREAD_RATE = 300;
 
 /**
  * Wildfire IIFE
