@@ -3,6 +3,8 @@
  * @return {namespace} Wildfire namespace for game
  */
 var Wildfire = (function() {
+	// ----------- Constant variable declarations
+
 	// ----------- variable declarations
 	/**
 	 * Until the User selects the campfire or the lake set selected to null
@@ -16,19 +18,39 @@ var Wildfire = (function() {
 	 * @return {undefined}
 	 */
 	var selectLake = function() {
+		//Reset the other buttons borders
+		resetPowerButtons();
+
 		/**
 		 * Place a dotted border around the Lake button
 		 * @type {css}
 		 */
-		$(this).css({
-			border: '1px dotted gray',
-			padding: 2
-		});
+		$(this).addClass('selected-power');
 		/**
 		 * Set the selected variable to be blue (btn-primary with backbone)
 		 * @type {String}
 		 */
 		selected = 'btn-primary';
+	};
+
+	/**
+	 * When the User clicks on the Campfire button
+	 * @return {undefined}
+	 */
+	var selectCampfire = function() {
+		//Reset the other buttons borders
+		resetPowerButtons();
+		
+		/**
+		 * Place a dotted border around the Campfire button
+		 * @type {css}
+		 */
+		$(this).addClass('selected-power');
+		/**
+		 * Set the selected variable to be blue (btn-primary with backbone)
+		 * @type {String}
+		 */
+		selected = 'btn-danger';
 	};
 
 	/**
@@ -65,11 +87,22 @@ var Wildfire = (function() {
 
 	};
 
+	// --------------- Functions
+	/**
+	 * Remove the border around the power buttons (lake and campfire)
+	 * @return {undefined}
+	 */
+	var resetPowerButtons = function() {
+		$('#lake').removeClass('selected-power');
+		$('#campfire').removeClass('selected-power');
+	};
+
 	/**
 	 * Return what we want to be public in the namespace
 	 */
 	return {
 		selectLake: selectLake,
+		selectCampfire: selectCampfire,
 		selectLand: selectLand
 	};
 
@@ -81,6 +114,10 @@ $(function() {
 	 * User clicked on the lake button
 	 */
 	$('#lake').on('click', Wildfire.selectLake);
+	/**
+	 * User clicked on the campfire button
+	 */
+	$('#campfire').on('click', Wildfire.selectCampfire);
 	/**
 	 * User clicked on one of the land buttons
 	 */
