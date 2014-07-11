@@ -13,3 +13,14 @@
 .icon-large {
 	font-size: 10em;
 }
+
+.room {
+	border: 1px solid #000;
+	height: 100px;
+	width: 100px;
+	margin: 10px auto;
+}
+
+.room-current {
+	background: #29a;
+}
