@@ -1,3 +1,6 @@
+// Constant declaration
+var HEAT_SPREAD_RATE = 500;
+
 /**
  * Wildfire IIFE
  * @return {namespace} Wildfire namespace for game
@@ -40,7 +43,7 @@ var Wildfire = (function() {
 	var selectCampfire = function() {
 		//Reset the other buttons borders
 		resetPowerButtons();
-		
+
 		/**
 		 * Place a dotted border around the Campfire button
 		 * @type {css}
@@ -87,6 +90,44 @@ var Wildfire = (function() {
 
 	};
 
+	/**
+	 * Spread heat out
+	 * @return {undefined}
+	 */
+	var spreadHeat = function() {
+		// grab all red elements
+		var fire = $('#land > li > .btn-danger');
+		// loop through all of the elements on fire and spread heat if necessary
+		fire.each(function(el) {
+			var previous = $(this).parent().prev().children();
+			if(previous.hasClass('btn-default')) {
+				previous.removeClass('btn-default');
+				previous.addClass('btn-warning');
+			}
+			var next = $(this).parent().next().children();
+			if(next.hasClass('btn-default')) {
+				next.removeClass('btn-default');
+				next.addClass('btn-warning');
+			}
+		});
+
+		// grab all orange elements
+		var heat = $('#land > li > .btn-warning');
+		// loop through all of the heat elements and spread heat if necessary
+		heat.each(function(el) {
+			var previous = $(this).parent().prev().children();
+			if(previous.hasClass('btn-default')) {
+				previous.removeClass('btn-default');
+				previous.addClass('btn-warning');
+			}
+			var next = $(this).parent().next().children();
+			if(next.hasClass('btn-default')) {
+				next.removeClass('btn-default');
+				next.addClass('btn-warning');
+			}
+		});
+	};
+
 	// --------------- Functions
 	/**
 	 * Remove the border around the power buttons (lake and campfire)
@@ -103,7 +144,8 @@ var Wildfire = (function() {
 	return {
 		selectLake: selectLake,
 		selectCampfire: selectCampfire,
-		selectLand: selectLand
+		selectLand: selectLand,
+		spreadHeat: spreadHeat
 	};
 
 })();
@@ -123,5 +165,7 @@ $(function() {
 	 */
 	$('#land a').on('click', Wildfire.selectLand);
 
+	// spread the heat
+	setInterval(Wildfire.spreadHeat, HEAT_SPREAD_RATE);
 
 });
