@@ -23,9 +23,9 @@ Classes:
    ☐ Level 1
 
 Roadmap Alpha:
- ☐ Create UI
- ☐ Airplane appears on the screen
- ☐ Airplane flies accross the screen
+ ✔ Create UI @done (14-07-14 16:33)
+ ✔ Airplane appears on the screen @done (14-07-14 16:34)
+ ✔ Airplane flies accross the screen @done (14-07-14 17:05)
  ☐ Airplane turns around and circles the airport
  ☐ Airplane is selectable
  ☐ Airplane can be landed at the appropriate runway
