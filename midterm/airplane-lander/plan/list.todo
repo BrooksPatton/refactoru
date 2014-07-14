@@ -1,0 +1,50 @@
+Description:
+☐ Different colored planes fly in the sky above an airport. There are three different sizes of planes, and three different sizes of landing strips. The different sizes correspond to different colored planes and the airstrips. The Player must click on a plane, and then the landing strip that they want the plane to land at. The planes must land on a strip that can handle their size or larger. Once landed, the plan will take some time to get off the runway, and until then the runway is not available for planes to land on it. The player loses when a plane runs out of fuel and crashes.
+  
+Technologies:
+ ☐ CSS animations
+ ☐ Collission detection
+  
+Classes:
+ ☐ Airport
+   ☐ Runways
+   ☐ Planes
+   ☐ Terminal
+ ☐ Plane
+   ☐ Location
+   ☐ Fuel
+   ☐ Passengers
+ ☐ Runway
+   ☐ Status
+ ☐ Player
+   ☐ Level
+   ☐ Passengers landed
+ ☐ Game
+   ☐ Level 1
+
+ Alpha:
+  ☐ Landing screen
+  ☐ Easy difficulty level
+  ☐ Planes enter screen
+  ☐ Player can select planes
+  ☐ Player can have planes land at appropriate runway
+  ☐ Runway shuts down for brief period of time after each landing
+  ☐ Track points for each plane landed
+  ☐ Planes use fuel when flying
+  ☐ Planes can run out of fuel and crash
+  ☐ Game over screen
+
+  Beta:
+   ☐ Loading screen
+   ☐ High scores
+   ☐ Medium difficulty level
+   ☐ Hard difficulty level
+   ☐ Share with Facebook
+   ☐ Share with Twitter
+   ☐ Share with Google +
+   ☐ Planes want to take off
+
+  Final:
+   ☐ Login system using username/password, facebook, google+, and twitter
+   ☐ Store high scores in database
+   ☐ Friends can challenge eachother
