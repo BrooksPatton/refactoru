@@ -29,9 +29,20 @@ Lander.Plane.prototype.getStartingXCoordinate = function() {
 
 Lander.Plane.prototype.fly = function() {
 	var position = this.el.position();
-	this.el.css('left', position.left + 1);
+	this.x = position.left;
+	if(this.x >= Lander.screenWidth - 75 && this.direction === 'right') {
+		this.el.css('-webkit-transform', 'rotate(180deg)');
+		this.direction = 'left';
+	}
+	else if(this.x <= 50 && this.direction === 'left') {
+		this.el.css('-webkit-transform', 'rotate(0)');
+		this.direction = 'right';
+	}
+	( this.direction === 'right' ) ? this.el.css('left', position.left + 1) : this.el.css('left', position.left - 1);
+	this.render();
 };
 
 Lander.Plane.prototype.launch = function() {
-	setInterval(this.fly.bind(this), 100);
+	setInterval(this.fly.bind(this), 10);
+	this.direction = 'right';
 };
