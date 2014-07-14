@@ -128,20 +128,53 @@
 
 			</div>
 
-			<!-- Dungeon map -->
+			<!-- Navigation and Log -->
 			<div class="border col-md-3">
 
-				<div class="row">
-					<!-- <div class="room"></div> -->
-				</div>
+				<!-- Navigation -->
+				<section>
+					<div class="row">
+						<div id="nav-forward" class="col-md-4 col-md-offset-4 text-center">
+							<i class='icon-up-bold icon-small'></i>
+						</div>
 
-				<div class="row">
-					<!-- <div class="room room-current"></div> -->
-				</div>
+						<div id="nav-up" class="col-md-4 text-center">
+							<i class='icon-angle-double-up icon-small'></i>
+						</div>
+					</div>
 
-				<div class="row">
-					<!-- <div class="room"></div> -->
-				</div>
+					<div class="row">
+						<div id='nav-left' class="col-md-6 text-center">
+							<i class='icon-left-bold icon-small'></i>
+						</div>
+
+						<div id="nav-right" class="col-md-6 text-center">
+							<i class='icon-right-bold icon-small'></i>
+						</div>
+					</div>
+
+					<div class="row">
+						<div id="nav-back" class="col-md-4 col-md-offset-4 text-center">
+							<i class='icon-down-bold icon-small'></i>
+						</div>
+
+						<div id="nav-down" class="col-md-4 text-center">
+							<i class='icon-angle-double-down icon-small'></i>
+						</div>
+					</div>
+				</section>
+
+				<!-- Battle Log -->
+				<section>
+					<h1><span class='small'>Battle Log:</span></h1>
+
+					<div id="battle-log">
+						<ul class="list-group">
+							<!-- <li class="list-group-item list-group-item-success">You hit the Imp for 3 damage</li> -->
+							<!-- <li class="list-group-item list-group-item-danger">Imp hit you for 5 damage</li> -->
+						</ul>
+					</div>
+				</section>
 
 			</div>
 			

@@ -6,6 +6,10 @@
 	border: 1px solid #000;
 }
 
+.icon-small {
+	font-size: 3em;
+}
+
 .icon-medium {
 	font-size: 5em;
 }
