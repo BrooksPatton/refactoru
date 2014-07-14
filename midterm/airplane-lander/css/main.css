@@ -1,0 +1,46 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.sky {
+  height: 75%;
+}
+
+.ground {
+  height: 25%;
+  max-height: 25%;
+  overflow: hidden;
+}
+
+.runway {
+  margin-top: 2%;
+}
+
+.runway-medium img {
+  width: 150px;
+}
+
+.runway-small img {
+  width: 100px;
+}
+
+.bg-peter-rivers {
+  background: #3498db;
+}
+
+.bg-nephritis {
+  background: #27ae60;
+}
+
+.icon-small {
+  font-size: 2em;
+}
+
+.icon-medium {
+  font-size: 5em;
+}
+
+.icon-large {
+  font-size: 10em;
+}

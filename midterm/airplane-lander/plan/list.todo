@@ -22,29 +22,19 @@ Classes:
  ☐ Game
    ☐ Level 1
 
- Alpha:
-  ☐ Landing screen
-  ☐ Easy difficulty level
-  ☐ Planes enter screen
-  ☐ Player can select planes
-  ☐ Player can have planes land at appropriate runway
-  ☐ Runway shuts down for brief period of time after each landing
-  ☐ Track points for each plane landed
-  ☐ Planes use fuel when flying
-  ☐ Planes can run out of fuel and crash
-  ☐ Game over screen
-
-  Beta:
-   ☐ Loading screen
-   ☐ High scores
-   ☐ Medium difficulty level
-   ☐ Hard difficulty level
-   ☐ Share with Facebook
-   ☐ Share with Twitter
-   ☐ Share with Google +
-   ☐ Planes want to take off
-
-  Final:
-   ☐ Login system using username/password, facebook, google+, and twitter
-   ☐ Store high scores in database
-   ☐ Friends can challenge eachother
+Roadmap Alpha:
+ ☐ Create UI
+ ☐ Airplane appears on the screen
+ ☐ Airplane flies accross the screen
+ ☐ Airplane turns around and circles the airport
+ ☐ Airplane is selectable
+ ☐ Airplane can be landed at the appropriate runway
+ ☐ Airplane animates its landing
+ ☐ Score is incremented
+ ☐ Airplanes have fuel
+ ☐ Airplanes use fuel flying
+ ☐ Airplanes can run out of fuel
+ ☐ Game over at end of fuel
+ ☐ Animate crash
+ ☐ Airplanes can collide with eachother
+ ☐ Animate crash
