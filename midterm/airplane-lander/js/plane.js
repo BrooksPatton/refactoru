@@ -139,4 +139,29 @@ Lander.Plane.prototype.useFuel = function() {
 			}
 			break;
 	}
+
+	if(this.fuel <= 0) {
+		this.crashIntoGround();
+	}
+};
+
+Lander.Plane.prototype.crashIntoGround = function() {
+	var self = this;
+	var crashLocation = $('.ground').position();
+	clearInterval(this.flyingInterval);
+	if(this.direction === 'right') {
+		crashLocation.left = this.x + Lander.DISTANCE_TO_CRASH;
+	}
+	else {
+		crashLocation.left = this.x - Lander.DISTANCE_TO_CRASH;
+	}
+	this.el.animate(crashLocation, {
+		duration: Lander.PLANE_CRASH_SPEED,
+		easing: 'linear',
+		done: function() {
+			self.el.css('-webkit-transform', 'rotate(0)');
+			self.el.removeClass('icon-flight-1');
+			self.el.addClass('icon-fire-station');
+		}
+	});
 };
