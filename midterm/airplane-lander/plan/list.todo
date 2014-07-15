@@ -30,7 +30,7 @@ Roadmap Alpha:
  ✔ Airplane is selectable @done (14-07-15 10:07)
  ✔ Airplane can be landed at the appropriate runway @done (14-07-15 11:43)
  ✔ Airplane animates its landing @done (14-07-15 11:43)
- ☐ Score is incremented
+ ✔ Score is incremented @done (14-07-15 16:31)
  ☐ Airplanes have fuel
  ☐ Airplanes use fuel flying
  ☐ Airplanes can run out of fuel
@@ -41,3 +41,5 @@ Roadmap Alpha:
 
  Roadmap Beta:
   ☐ Selected planes have a white border around them while they are selected.
+  ☐ Planes land on runway, not next to it
+  ☐ Runways are tilted to look 3-dimensional

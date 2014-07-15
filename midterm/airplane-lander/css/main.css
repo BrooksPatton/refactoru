@@ -56,3 +56,11 @@ html, body {
 .plane {
   cursor: pointer;
 }
+
+.fuel-half-left {
+  color: yellow;
+}
+
+.fuel-quarter-left {
+  color: red;
+}

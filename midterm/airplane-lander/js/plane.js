@@ -12,6 +12,7 @@ Lander.Plane.prototype.create = function() {
 	this.el.addClass( this.randomSize() );
 	this.el.attr('data-id', this.id);
 	this.getNumberOfPassengers();
+	this.getFuel();
 };
 
 Lander.Plane.prototype.render = function() {
@@ -40,6 +41,7 @@ Lander.Plane.prototype.fly = function() {
 		this.direction = 'right';
 	}
 	( this.direction === 'right' ) ? this.el.css('left', position.left + Lander.PLANE_SPEED) : this.el.css('left', position.left - Lander.PLANE_SPEED);
+	this.useFuel();
 	this.render();
 };
 
@@ -92,5 +94,49 @@ Lander.Plane.prototype.getNumberOfPassengers = function() {
 			break;
 		default:
 			console.log('uh oh, trouble getting the number of passengers.');
+	}
+};
+
+Lander.Plane.prototype.getFuel = function() {
+	switch (this.size) {
+		case 'small':
+			this.fuel = _.random(Lander.MAX_SMALL_PLANE_FUEL / 2, Lander.MAX_SMALL_PLANE_FUEL);
+			break;
+		case 'medium':
+			this.fuel = _.random(Lander.MAX_MEDIUM_PLANE_FUEL / 2, Lander.MAX_MEDIUM_PLANE_FUEL);
+			break;
+		case 'large':
+			this.fuel = _.random(Lander.MAX_LARGE_PLANE_FUEL / 2, Lander.MAX_LARGE_PLANE_FUEL);
+			break;
+	}
+};
+
+Lander.Plane.prototype.useFuel = function() {
+	this.fuel -= Lander.FUEL_USAGE_RATE;
+	switch (this.size) {
+		case 'small':
+			if(this.fuel < Lander.MAX_SMALL_PLANE_FUEL / 2) {
+				this.el.addClass('fuel-half-left')
+			}
+			if(this.fuel < Lander.MAX_SMALL_PLANE_FUEL / 4) {
+				this.el.addClass('fuel-quarter-left')
+			}
+			break;
+		case 'medium':
+			if(this.fuel < Lander.MAX_MEDIUM_PLANE_FUEL / 2) {
+				this.el.addClass('fuel-half-left')
+			}
+			if(this.fuel < Lander.MAX_MEDIUM_PLANE_FUEL / 4) {
+				this.el.addClass('fuel-quarter-left')
+			}
+			break;
+		case 'large':
+			if(this.fuel < Lander.MAX_LARGE_PLANE_FUEL / 2) {
+				this.el.addClass('fuel-half-left')
+			}
+			if(this.fuel < Lander.MAX_LARGE_PLANE_FUEL / 4) {
+				this.el.addClass('fuel-quarter-left')
+			}
+			break;
 	}
 };
