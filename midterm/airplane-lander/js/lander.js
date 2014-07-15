@@ -16,6 +16,7 @@ var Lander = (function() {
 		plane.create();
 		plane.render();
 		plane.launch();
+		planeList.push(plane);
 	};
 
 	//return
@@ -23,6 +24,7 @@ var Lander = (function() {
 		getRandomHeightInSky: getRandomHeightInSky,
 		newPlane: newPlane,
 		planeId: planeId,
-		screenWidth: screenWidth
+		screenWidth: screenWidth,
+		planeList: planeList
 	}
 })();
