@@ -25,6 +25,10 @@ html, body {
   width: 100px;
 }
 
+.plane {
+  z-index: 10;
+}
+
 .bg-peter-rivers {
   background: #3498db;
 }
@@ -43,4 +47,12 @@ html, body {
 
 .icon-large {
   font-size: 3em;
+}
+
+.selected {
+  border: 1px solid #fff;
+}
+
+.plane {
+  cursor: pointer;
 }

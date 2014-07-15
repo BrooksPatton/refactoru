@@ -11,7 +11,6 @@ Lander.Plane.prototype.create = function() {
 	});
 	this.el.addClass( this.randomSize() );
 	this.el.attr('data-id', this.id);
-	this.collisionBox = this.createCollisionBox();
 	return this.el;
 };
 
@@ -39,29 +38,27 @@ Lander.Plane.prototype.fly = function() {
 		this.el.css('-webkit-transform', 'rotate(0)');
 		this.direction = 'right';
 	}
-	( this.direction === 'right' ) ? this.el.css('left', position.left + 1) : this.el.css('left', position.left - 1);
+	( this.direction === 'right' ) ? this.el.css('left', position.left + Lander.PLANE_SPEED) : this.el.css('left', position.left - Lander.PLANE_SPEED);
 	this.render();
-	this.testCollision();
 };
 
 Lander.Plane.prototype.launch = function() {
-	setInterval(this.fly.bind(this), 10);
+	this.flyingInterval = setInterval(this.fly.bind(this), Lander.PLANE_FLY_INTERVAL);
 	this.direction = 'right';
-	this.createCollisionBox();
 };
 
-Lander.Plane.prototype.createCollisionBox = function() {
-	this.collisionBox = new SAT.Box(new SAT.Vector(0, this.y), this.el.width(), this.el.height()).toPolygon();
+Lander.Plane.prototype.land = function(runway) {
+	clearInterval(this.flyingInterval);
+	var runwayPosition = $('#' + runway).position();
+	runwayPosition.left += ($('#' + runway).width());
+	runwayPosition.top += ( $('#' + runway).height());
+	this.el.animate(runwayPosition, Lander.PLANE_LANDING_SPEED);
 };
 
-Lander.Plane.prototype.testCollision = function() {
-	var self = this;
-	var listOfOtherPlanes = _.reject(Lander.planeList, function(item) {
-		return item.id === self.id;
-	});
-	listOfOtherPlanes.forEach(function(item) {
-		if( SAT.testPolygonPolygon(self.collisionBox, item.collisionBox) ) {
-			console.log('collision!');
-		}
-	});
+Lander.Plane.prototype.markSelected = function() {
+	this.el.addClass('selected');
+};
+
+Lander.Plane.prototype.removeSelectedMark = function() {
+	this.el.removeClass('selected')
 };

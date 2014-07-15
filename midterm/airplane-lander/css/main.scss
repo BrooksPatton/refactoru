@@ -27,6 +27,10 @@ html, body {
 	width: 100px;
 }
 
+.plane {
+	z-index: 10;
+}
+
 //  Modules
 .bg-peter-rivers {
 	background: #3498db;
@@ -48,6 +52,13 @@ html, body {
 	font-size: 3em;
 }
 
+.selected {
+	border: 1px solid #fff;
+}
+
 // Themes
+.plane {
+	cursor: pointer;
+}
 
 // Events
