@@ -31,9 +31,9 @@ Roadmap Alpha:
  ✔ Airplane can be landed at the appropriate runway @done (14-07-15 11:43)
  ✔ Airplane animates its landing @done (14-07-15 11:43)
  ✔ Score is incremented @done (14-07-15 16:31)
- ☐ Airplanes have fuel
- ☐ Airplanes use fuel flying
- ☐ Airplanes can run out of fuel
+ ✔ Airplanes have fuel @done (14-07-15 17:33)
+ ✔ Airplanes use fuel flying @done (14-07-15 17:33)
+ ✔ Airplanes can run out of fuel @done (14-07-15 17:33)
  ☐ Game over at end of fuel
  ☐ Animate crash
  ☐ Airplanes can collide with eachother
