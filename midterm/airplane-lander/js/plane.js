@@ -11,7 +11,7 @@ Lander.Plane.prototype.create = function() {
 	});
 	this.el.addClass( this.randomSize() );
 	this.el.attr('data-id', this.id);
-	return this.el;
+	this.getNumberOfPassengers();
 };
 
 Lander.Plane.prototype.render = function() {
@@ -20,7 +20,8 @@ Lander.Plane.prototype.render = function() {
 
 Lander.Plane.prototype.randomSize = function() {
 	var possibleSizes = ['small', 'medium', 'large'];
-	return 'icon-' + possibleSizes[ _.random(0, possibleSizes.length -1) ];
+	this.size = possibleSizes[ _.random(0, possibleSizes.length -1) ];
+	return 'icon-' + this.size;
 };
 
 Lander.Plane.prototype.getStartingXCoordinate = function() {
@@ -48,11 +49,26 @@ Lander.Plane.prototype.launch = function() {
 };
 
 Lander.Plane.prototype.land = function(runway) {
+	var self = this;
 	clearInterval(this.flyingInterval);
-	var runwayPosition = $('#' + runway).position();
-	runwayPosition.left += ($('#' + runway).width());
-	runwayPosition.top += ( $('#' + runway).height());
-	this.el.animate(runwayPosition, Lander.PLANE_LANDING_SPEED);
+	this.el.removeClass('selected');
+	var runwayPosition = runway.getPosition();
+	if(this.x > runwayPosition.left && this.direction === 'right') {
+		this.el.css('-webkit-transform', 'rotate(180deg)');
+	}
+	else if(this.x < runwayPosition.left && this.direction === 'left') {
+		this.el.css('-webkit-transform', 'rotate(0)');
+	}
+	runway.disable();
+	this.el.animate(runwayPosition, {
+		duration: Lander.PLANE_LANDING_SPEED,
+		queue: false,
+		done: function() {
+			Lander.score += self.passengerCount;
+			self.el.remove();
+			runway.enable();
+		}
+	});
 };
 
 Lander.Plane.prototype.markSelected = function() {
@@ -61,4 +77,20 @@ Lander.Plane.prototype.markSelected = function() {
 
 Lander.Plane.prototype.removeSelectedMark = function() {
 	this.el.removeClass('selected')
+};
+
+Lander.Plane.prototype.getNumberOfPassengers = function() {
+	switch (this.size) {
+		case 'small':
+			this.passengerCount = _.random(Lander.MIN_SMALL_PLANE_PASSENGERS, Lander.MAX_SMALL_PLANE_PASSENGERS);
+			break;
+		case 'medium':
+			this.passengerCount = _.random(Lander.MIN_MEDIUM_PLANE_PASSENGERS, Lander.MAX_MEDIUM_PLANE_PASSENGERS);
+			break;
+		case 'large':
+			this.passengerCount = _.random(Lander.MIN_LARGE_PLANE_PASSENGERS, Lander.MAX_LARGE_PLANE_PASSENGERS);
+			break;
+		default:
+			console.log('uh oh, trouble getting the number of passengers.');
+	}
 };

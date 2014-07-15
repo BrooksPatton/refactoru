@@ -1,24 +1,42 @@
 var Lander = (function() {
 	// Constants
-	var PLANE_FLY_INTERVAL = 50;
-	var PLANE_LAUNCH_INTERVAL = 10000;
+	var PLANE_FLY_INTERVAL = 10;
+	var PLANE_LAUNCH_INTERVAL = 5000;
 	var PLANE_SPEED = 1;
 	var PLANE_LANDING_SPEED = 10000;
+	var MAX_SMALL_PLANE_PASSENGERS = 50;
+	var MIN_SMALL_PLANE_PASSENGERS = 1;
+	var MAX_MEDIUM_PLANE_PASSENGERS = 150;
+	var MIN_MEDIUM_PLANE_PASSENGERS = 51;
+	var MAX_LARGE_PLANE_PASSENGERS = 250;
+	var MIN_LARGE_PLANE_PASSENGERS = 151;
 
 	//variables
+	var airport = {};
 	var planeList = [];
 	var planeId = 0;
 	var screenWidth = $(window).width();
 	var selectedPlane = {};
+	var score = 0;
 
 	//functions
+	var initAirport = function() {
+		airport = new Lander.Airport();
+		airport.runways.push( buildRunway('small') );
+		airport.runways.push( buildRunway('medium') );
+		airport.runways.push( buildRunway('large') );
+		airport.buildRunways();
+		airport.activateRunways();
+	};
+
 	var buildRunway = function(size) {
 		var runway = new Lander.Runway(size);
 		runway.create();
+		return runway;
 	};
 
 	var deployRunways = function() {
-		
+
 	};
 
 	var getRandomHeightInSky = function() {
@@ -58,7 +76,8 @@ var Lander = (function() {
 
 	var landAtSmallRunway = function() {
 		if( selectedPlane.el.hasClass('icon-small') ) {
-			selectedPlane.land('runway-small');
+			var runway = _.findWhere(airport.runways, {size: 'runway-small'});
+			selectedPlane.land(runway);
 		}
 		else {
 			console.log('too big');
@@ -67,6 +86,7 @@ var Lander = (function() {
 
 	//return
 	return {
+		initAirport: initAirport,
 		getRandomHeightInSky: getRandomHeightInSky,
 		newPlane: newPlane,
 		planeId: planeId,
@@ -79,7 +99,15 @@ var Lander = (function() {
 		landAtSmallRunway: landAtSmallRunway,
 		PLANE_SPEED: PLANE_SPEED,
 		PLANE_LANDING_SPEED: PLANE_LANDING_SPEED,
-		buildRunways: buildRunways,
-		deployRunways: deployRunways
+		buildRunway: buildRunway,
+		deployRunways: deployRunways,
+		MAX_SMALL_PLANE_PASSENGERS: MAX_SMALL_PLANE_PASSENGERS,
+		MAX_MEDIUM_PLANE_PASSENGERS: MAX_MEDIUM_PLANE_PASSENGERS,
+		MAX_LARGE_PLANE_PASSENGERS: MAX_LARGE_PLANE_PASSENGERS,
+		MIN_SMALL_PLANE_PASSENGERS: MIN_SMALL_PLANE_PASSENGERS,
+		MIN_MEDIUM_PLANE_PASSENGERS: MIN_MEDIUM_PLANE_PASSENGERS,
+		MIN_LARGE_PLANE_PASSENGERS: MIN_LARGE_PLANE_PASSENGERS,
+		airport: airport,
+		score: score
 	}
 })();
