@@ -33,10 +33,10 @@ Lander.Runway.prototype.getPosition = function() {
 	return this.position;
 };
 
-Lander.Runway.prototype.enable = function () {
-	this.el.bind('click', Lander.landAtSmallRunway);
+Lander.Runway.prototype.enable = function (callback) {
+	this.el.bind('click', callback);
 };
 
-Lander.Runway.prototype.disable = function() {
-	this.el.unbind('click', Lander.landAtSmallRunway);
+Lander.Runway.prototype.disable = function(callback) {
+	this.el.unbind('click', callback);
 };

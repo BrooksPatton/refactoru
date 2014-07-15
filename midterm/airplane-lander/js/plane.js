@@ -48,7 +48,7 @@ Lander.Plane.prototype.launch = function() {
 	this.direction = 'right';
 };
 
-Lander.Plane.prototype.land = function(runway) {
+Lander.Plane.prototype.land = function(runway, callback) {
 	var self = this;
 	clearInterval(this.flyingInterval);
 	this.el.removeClass('selected');
@@ -66,7 +66,7 @@ Lander.Plane.prototype.land = function(runway) {
 		done: function() {
 			Lander.score += self.passengerCount;
 			self.el.remove();
-			runway.enable();
+			runway.enable(callback);
 		}
 	});
 };

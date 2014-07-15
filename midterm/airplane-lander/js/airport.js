@@ -9,7 +9,7 @@ Lander.Airport.prototype.buildRunways = function() {
 };
 
 Lander.Airport.prototype.activateRunways = function() {
-	this.runways.forEach(function(item) {
-		item.enable();
-	});
+	this.runways[0].enable(Lander.landAtSmallRunway);
+	this.runways[1].enable(Lander.landAtMediumRunway);
+	this.runways[2].enable(Lander.landAtLargeRunway);
 };

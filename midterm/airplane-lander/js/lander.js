@@ -77,7 +77,27 @@ var Lander = (function() {
 	var landAtSmallRunway = function() {
 		if( selectedPlane.el.hasClass('icon-small') ) {
 			var runway = _.findWhere(airport.runways, {size: 'runway-small'});
-			selectedPlane.land(runway);
+			selectedPlane.land(runway, Lander.landAtSmallRunway);
+		}
+		else {
+			console.log('too big');
+		}
+	};
+
+	var landAtMediumRunway = function() {
+		if( selectedPlane.el.hasClass('icon-medium') || selectedPlane.el.hasClass('icon-small') ) {
+			var runway = _.findWhere(airport.runways, {size: 'runway-medium'});
+			selectedPlane.land(runway, Lander.landAtMediumRunway);
+		}
+		else {
+			console.log('too big');
+		}
+	};
+
+	var landAtLargeRunway = function() {
+		if( selectedPlane.el.hasClass('icon-large') || selectedPlane.el.hasClass('icon-medium') || selectedPlane.el.hasClass('icon-small') ) {
+			var runway = _.findWhere(airport.runways, {size: 'runway-large'});
+			selectedPlane.land(runway, Lander.landAtLargeRunway);
 		}
 		else {
 			console.log('too big');
@@ -97,6 +117,8 @@ var Lander = (function() {
 		PLANE_LAUNCH_INTERVAL: PLANE_LAUNCH_INTERVAL,
 		selectPlane: selectPlane,
 		landAtSmallRunway: landAtSmallRunway,
+		landAtMediumRunway: landAtMediumRunway,
+		landAtLargeRunway: landAtLargeRunway,
 		PLANE_SPEED: PLANE_SPEED,
 		PLANE_LANDING_SPEED: PLANE_LANDING_SPEED,
 		buildRunway: buildRunway,
@@ -109,5 +131,5 @@ var Lander = (function() {
 		MIN_LARGE_PLANE_PASSENGERS: MIN_LARGE_PLANE_PASSENGERS,
 		airport: airport,
 		score: score
-	}
+	};
 })();
