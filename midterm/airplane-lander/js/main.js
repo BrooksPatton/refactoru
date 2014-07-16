@@ -3,8 +3,7 @@ $(document).on('ready', function() {
 
 	Lander.buildRunway('small');
 
-	Lander.deployRunways();
+	Lander.startGame();
 
-	setInterval(Lander.newPlane, Lander.PLANE_LAUNCH_INTERVAL);
 	$('.sky').on('mousedown', '.plane', Lander.selectPlane);
 });  

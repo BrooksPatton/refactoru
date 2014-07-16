@@ -162,6 +162,7 @@ Lander.Plane.prototype.crashIntoGround = function() {
 			self.el.css('-webkit-transform', 'rotate(0)');
 			self.el.removeClass('icon-flight-1');
 			self.el.addClass('icon-fire-station');
+			Lander.gameOver();
 		}
 	});
 };

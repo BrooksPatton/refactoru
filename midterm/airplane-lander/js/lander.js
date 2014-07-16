@@ -24,6 +24,7 @@ var Lander = (function() {
 	var screenWidth = $(window).width();
 	var selectedPlane = {};
 	var score = 0;
+	var newPlanesInterval;
 
 	//functions
 	var initAirport = function() {
@@ -41,8 +42,8 @@ var Lander = (function() {
 		return runway;
 	};
 
-	var deployRunways = function() {
-
+	var startGame = function() {
+		newPlanesInterval = setInterval(Lander.newPlane, Lander.PLANE_LAUNCH_INTERVAL);
 	};
 
 	var getRandomHeightInSky = function() {
@@ -110,6 +111,11 @@ var Lander = (function() {
 		}
 	};
 
+	var gameOver = function() {
+		alert('game over');
+		clearInterval(newPlanesInterval);
+	};
+
 	//return
 	return {
 		initAirport: initAirport,
@@ -128,7 +134,7 @@ var Lander = (function() {
 		PLANE_SPEED: PLANE_SPEED,
 		PLANE_LANDING_SPEED: PLANE_LANDING_SPEED,
 		buildRunway: buildRunway,
-		deployRunways: deployRunways,
+		startGame: startGame,
 		MAX_SMALL_PLANE_PASSENGERS: MAX_SMALL_PLANE_PASSENGERS,
 		MAX_MEDIUM_PLANE_PASSENGERS: MAX_MEDIUM_PLANE_PASSENGERS,
 		MAX_LARGE_PLANE_PASSENGERS: MAX_LARGE_PLANE_PASSENGERS,
@@ -142,6 +148,8 @@ var Lander = (function() {
 		MAX_LARGE_PLANE_FUEL: MAX_LARGE_PLANE_FUEL,
 		FUEL_USAGE_RATE: FUEL_USAGE_RATE,
 		DISTANCE_TO_CRASH: DISTANCE_TO_CRASH,
-		PLANE_CRASH_SPEED: PLANE_CRASH_SPEED
+		PLANE_CRASH_SPEED: PLANE_CRASH_SPEED,
+		gameOver: gameOver,
+		newPlanesInterval: newPlanesInterval
 	};
 })();
