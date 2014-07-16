@@ -66,7 +66,7 @@ Lander.Plane.prototype.land = function(runway, callback) {
 		duration: Lander.PLANE_LANDING_SPEED,
 		queue: false,
 		done: function() {
-			Lander.score += self.passengerCount;
+			Lander.peopleSaved += self.passengerCount;
 			self.el.remove();
 			runway.enable(callback);
 		}
@@ -162,6 +162,7 @@ Lander.Plane.prototype.crashIntoGround = function() {
 			self.el.css('-webkit-transform', 'rotate(0)');
 			self.el.removeClass('icon-flight-1');
 			self.el.addClass('icon-fire-station');
+			Lander.peopleKilled += self.passengerCount;
 			Lander.gameOver();
 		}
 	});

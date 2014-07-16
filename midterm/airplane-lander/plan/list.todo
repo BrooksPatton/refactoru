@@ -35,11 +35,15 @@ Roadmap Alpha:
  ✔ Airplanes use fuel flying @done (14-07-15 17:33)
  ✔ Airplanes can run out of fuel @done (14-07-15 17:33)
  ☐ Game over at end of fuel
- ☐ Animate crash
+ ✔ Animate crash @done (14-07-16 09:19)
  ☐ Airplanes can collide with eachother
  ☐ Animate crash
+ ☐ Feedback system
 
  Roadmap Beta:
   ☐ Selected planes have a white border around them while they are selected.
   ☐ Planes land on runway, not next to it
   ☐ Runways are tilted to look 3-dimensional
+  ☐ Level system
+  ☐ Missions
+  ☐ Local storage to save points

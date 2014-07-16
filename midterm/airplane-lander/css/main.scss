@@ -31,6 +31,15 @@ html, body {
 	z-index: 10;
 }
 
+.game-over {
+	text-align: center;
+	padding: 20px;
+	width: 20em;
+	margin: 0 auto;
+	position: relative;
+	top: 25%;
+}
+
 //  Modules
 .bg-peter-rivers {
 	background: #3498db;
@@ -38,6 +47,10 @@ html, body {
 
 .bg-nephritis {
 	background: #27ae60;
+}
+
+.bg-clouds {
+	background: #ecf0f1;
 }
 
 .icon-small {
@@ -54,6 +67,10 @@ html, body {
 
 .selected {
 	border: 1px solid #fff;
+}
+
+.hidden {
+	display: none;
 }
 
 // Themes

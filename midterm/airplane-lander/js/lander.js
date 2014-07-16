@@ -23,7 +23,8 @@ var Lander = (function() {
 	var planeId = 0;
 	var screenWidth = $(window).width();
 	var selectedPlane = {};
-	var score = 0;
+	var peopleSaved = 0;
+	var peopleKilled = 0;
 	var newPlanesInterval;
 
 	//functions
@@ -112,8 +113,11 @@ var Lander = (function() {
 	};
 
 	var gameOver = function() {
-		alert('game over');
 		clearInterval(newPlanesInterval);
+		$('#people-saved').text(this.peopleSaved);
+		$('#people-killed').text(this.peopleKilled);
+		$('#total-score').text( this.peopleSaved - this.peopleKilled );
+		$('.game-over').removeClass('hidden')
 	};
 
 	//return
@@ -142,7 +146,7 @@ var Lander = (function() {
 		MIN_MEDIUM_PLANE_PASSENGERS: MIN_MEDIUM_PLANE_PASSENGERS,
 		MIN_LARGE_PLANE_PASSENGERS: MIN_LARGE_PLANE_PASSENGERS,
 		airport: airport,
-		score: score,
+		peopleSaved: peopleSaved,
 		MAX_SMALL_PLANE_FUEL: MAX_SMALL_PLANE_FUEL,
 		MAX_MEDIUM_PLANE_FUEL: MAX_MEDIUM_PLANE_FUEL,
 		MAX_LARGE_PLANE_FUEL: MAX_LARGE_PLANE_FUEL,
@@ -150,6 +154,7 @@ var Lander = (function() {
 		DISTANCE_TO_CRASH: DISTANCE_TO_CRASH,
 		PLANE_CRASH_SPEED: PLANE_CRASH_SPEED,
 		gameOver: gameOver,
-		newPlanesInterval: newPlanesInterval
+		newPlanesInterval: newPlanesInterval,
+		peopleKilled: peopleKilled
 	};
 })();
