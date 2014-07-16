@@ -40,7 +40,7 @@ Roadmap Alpha:
 
  Roadmap Beta:
   ✔ Selected planes have a white border around them while they are selected. @done (14-07-16 10:34)
-  ☐ Planes land on runway, not next to it
+  ✔ Planes land on runway, not next to it @done (14-07-16 10:53)
   ☐ Runways are tilted to look 3-dimensional
   ☐ Level system
   ☐ Missions
