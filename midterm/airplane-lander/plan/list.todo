@@ -34,11 +34,9 @@ Roadmap Alpha:
  ✔ Airplanes have fuel @done (14-07-15 17:33)
  ✔ Airplanes use fuel flying @done (14-07-15 17:33)
  ✔ Airplanes can run out of fuel @done (14-07-15 17:33)
- ☐ Game over at end of fuel
+ ✔ Game over at end of fuel @done (14-07-16 10:17)
  ✔ Animate crash @done (14-07-16 09:19)
- ☐ Airplanes can collide with eachother
- ☐ Animate crash
- ☐ Feedback system
+ ✔ Feedback system @done (14-07-16 10:33)
 
  Roadmap Beta:
   ☐ Selected planes have a white border around them while they are selected.
@@ -47,3 +45,6 @@ Roadmap Alpha:
   ☐ Level system
   ☐ Missions
   ☐ Local storage to save points
+  ☐ Players are unable to play the game after the game ends
+ ☐ Airplanes can collide with eachother
+ ☐ Animate crash
