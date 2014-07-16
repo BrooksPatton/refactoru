@@ -48,4 +48,4 @@ Roadmap Alpha:
   ✔ Players are unable to play the game after the game ends @done (14-07-16 11:27)
  ☐ Airplanes can collide with eachother
  ☐ Animate crash
- ☐ Fire shouldn't be moveable
+ ✔ Fire shouldn't be moveable @done (14-07-16 11:37)

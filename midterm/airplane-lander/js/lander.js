@@ -114,6 +114,9 @@ var Lander = (function() {
 
 	var gameOver = function() {
 		clearInterval(newPlanesInterval);
+		planeList.forEach(function(item) {
+			item.stopFlying();
+		});
 		$('.sky').off('mousedown', '.plane');
 		$('#people-saved').text(this.peopleSaved);
 		$('#people-killed').text(this.peopleKilled);

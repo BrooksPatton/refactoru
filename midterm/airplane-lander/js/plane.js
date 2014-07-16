@@ -167,3 +167,7 @@ Lander.Plane.prototype.crashIntoGround = function() {
 		}
 	});
 };
+
+Lander.Plane.prototype.stopFlying = function() {
+	clearInterval(this.flyingInterval);
+};
