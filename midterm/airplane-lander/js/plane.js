@@ -1,6 +1,7 @@
 Lander.Plane = function(y) {
 	this.y = y || Lander.getRandomHeightInSky();
 	this.status = 'flying';
+	this.id = Lander.planeId++;
 };
 
 Lander.Plane.prototype.create = function() {

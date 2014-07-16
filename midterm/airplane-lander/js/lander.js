@@ -55,11 +55,10 @@ var Lander = (function() {
 
 	var newPlane = function(y) {
 		var plane = new Lander.Plane(y);
+		planeList.push(plane);
 		plane.create();
 		plane.render();
 		plane.launch();
-		planeList.push(plane);
-		plane.id = planeList.length - 1;
 		return plane;
 	};
 
@@ -165,6 +164,7 @@ var Lander = (function() {
 		gameOver: gameOver,
 		newPlanesInterval: newPlanesInterval,
 		peopleKilled: peopleKilled,
-		cleanUpPlanesList: cleanUpPlanesList
+		cleanUpPlanesList: cleanUpPlanesList,
+		selectedPlane: selectedPlane
 	};
 })();
