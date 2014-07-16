@@ -1,6 +1,6 @@
 Lander.Plane = function(y) {
 	this.y = y || Lander.getRandomHeightInSky();
-	this.id = Lander.planeId++;
+	this.status = 'flying';
 };
 
 Lander.Plane.prototype.create = function() {
@@ -43,6 +43,7 @@ Lander.Plane.prototype.fly = function() {
 	( this.direction === 'right' ) ? this.el.css('left', position.left + Lander.PLANE_SPEED) : this.el.css('left', position.left - Lander.PLANE_SPEED);
 	this.useFuel();
 	this.render();
+	this.detectCollision();
 };
 
 Lander.Plane.prototype.launch = function() {
@@ -52,6 +53,7 @@ Lander.Plane.prototype.launch = function() {
 
 Lander.Plane.prototype.land = function(runway, callback) {
 	var self = this;
+	this.status = 'landing';
 	clearInterval(this.flyingInterval);
 	this.el.removeClass('selected');
 	var runwayPosition = runway.getPosition(this.size);
@@ -148,6 +150,7 @@ Lander.Plane.prototype.useFuel = function() {
 Lander.Plane.prototype.crashIntoGround = function() {
 	var self = this;
 	var crashLocation = $('.ground').position();
+	this.status = 'crashed';
 	clearInterval(this.flyingInterval);
 	if(this.direction === 'right') {
 		crashLocation.left = this.x + Lander.DISTANCE_TO_CRASH;
@@ -163,11 +166,52 @@ Lander.Plane.prototype.crashIntoGround = function() {
 			self.el.removeClass('icon-flight-1');
 			self.el.addClass('icon-fire-station');
 			Lander.peopleKilled += self.passengerCount;
-			Lander.gameOver();
+			self.delete();
+			// Lander.gameOver();
 		}
 	});
 };
 
 Lander.Plane.prototype.stopFlying = function() {
 	clearInterval(this.flyingInterval);
+};
+
+Lander.Plane.prototype.detectCollision = function() {
+	var myPosition = this.el.position();
+	var otherPlanes = _.reject(Lander.planeList, function(plane){return this === plane}.bind(this));
+	otherPlanes = _.reject(otherPlanes, function(plane){return plane.status === 'landing'}.bind(this));
+	otherPlanes.forEach(function(plane) {
+		var otherPlanePosition = plane.el.position();
+		if(
+			myPosition.left < otherPlanePosition.left + plane.el.width() && 
+			myPosition.left + this.el.width() > otherPlanePosition.left &&
+			myPosition.top < otherPlanePosition.top + plane.el.height() &&
+			myPosition.top + this.el.height() > otherPlanePosition.top
+		) {
+			this.explodeFromCollision();
+		}
+	}.bind(this));
+};
+
+Lander.Plane.prototype.explodeFromCollision = function() {
+	var crashLocation = $('.ground').position();
+	this.status = 'crashed';
+	crashLocation.left = this.x;
+	clearInterval(this.flyingInterval);
+	this.el.removeClass('icon-flight-1');
+	this.el.addClass('icon-fire-station');
+	this.el.addClass('red');
+	this.el.animate(crashLocation, {
+		duration: Lander.PLANE_CRASH_SPEED,
+		easing: 'linear',
+		done: function() {
+			Lander.peopleKilled += this.passengerCount;
+			this.delete();
+		}.bind(this)
+	});
+};
+
+Lander.Plane.prototype.delete = function() {
+	var index = _.indexOf(Lander.planeList, this);
+	Lander.planeList.splice(index, 1);
 };

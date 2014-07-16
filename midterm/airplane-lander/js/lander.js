@@ -1,7 +1,7 @@
 var Lander = (function() {
 	// Constants
 	var PLANE_FLY_INTERVAL = 10;
-	var PLANE_LAUNCH_INTERVAL = 5000;
+	var PLANE_LAUNCH_INTERVAL = 3000;
 	var PLANE_SPEED = 1;
 	var PLANE_LANDING_SPEED = 10000;
 	var MAX_SMALL_PLANE_PASSENGERS = 50;
@@ -59,6 +59,7 @@ var Lander = (function() {
 		plane.render();
 		plane.launch();
 		planeList.push(plane);
+		plane.id = planeList.length - 1;
 		return plane;
 	};
 
@@ -124,6 +125,10 @@ var Lander = (function() {
 		$('.game-over').removeClass('hidden')
 	};
 
+	var cleanUpPlanesList = function() {
+		planeList = _.reject(planeList, function(item) {return item.status === 'crashed'});
+	};
+
 	//return
 	return {
 		initAirport: initAirport,
@@ -159,6 +164,7 @@ var Lander = (function() {
 		PLANE_CRASH_SPEED: PLANE_CRASH_SPEED,
 		gameOver: gameOver,
 		newPlanesInterval: newPlanesInterval,
-		peopleKilled: peopleKilled
+		peopleKilled: peopleKilled,
+		cleanUpPlanesList: cleanUpPlanesList
 	};
 })();

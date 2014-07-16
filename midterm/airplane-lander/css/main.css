@@ -15,6 +15,7 @@ html, body {
 
 .runway {
   margin-top: 2%;
+  transform: scaleZ(10deg);
 }
 
 .runway-medium img {
@@ -68,6 +69,10 @@ html, body {
 
 .hidden {
   display: none;
+}
+
+.red {
+  color: red;
 }
 
 .plane {
