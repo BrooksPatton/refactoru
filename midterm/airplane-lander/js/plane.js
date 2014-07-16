@@ -54,7 +54,7 @@ Lander.Plane.prototype.land = function(runway, callback) {
 	var self = this;
 	clearInterval(this.flyingInterval);
 	this.el.removeClass('selected');
-	var runwayPosition = runway.getPosition();
+	var runwayPosition = runway.getPosition(this.size);
 	if(this.x > runwayPosition.left && this.direction === 'right') {
 		this.el.css('-webkit-transform', 'rotate(180deg)');
 	}

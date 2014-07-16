@@ -26,9 +26,21 @@ Lander.Runway.prototype.create = function() {
 	this.el.append('<img src="images/runway.png">');
 };
 
-Lander.Runway.prototype.getPosition = function() {
+Lander.Runway.prototype.getPosition = function(planeSize) {
+	var modifier = 0;
+	switch (planeSize) {
+		case 'small':
+			modifier = 1;
+			break;
+		case 'medium':
+			modifier = -10;
+			break;
+		case 'large':
+			modifier = -25;
+			break;
+	}
 	this.position = $('#' + this.size).position();
-	this.position.top += $('#' + this.size).height();
+	this.position.top += $('#' + this.size).height() + modifier;
 	this.position.left += $('#' + this.size).width();
 	return this.position;
 };

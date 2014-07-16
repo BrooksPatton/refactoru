@@ -39,7 +39,7 @@ Roadmap Alpha:
  ✔ Feedback system @done (14-07-16 10:33)
 
  Roadmap Beta:
-  ☐ Selected planes have a white border around them while they are selected.
+  ✔ Selected planes have a white border around them while they are selected. @done (14-07-16 10:34)
   ☐ Planes land on runway, not next to it
   ☐ Runways are tilted to look 3-dimensional
   ☐ Level system
@@ -48,3 +48,4 @@ Roadmap Alpha:
   ☐ Players are unable to play the game after the game ends
  ☐ Airplanes can collide with eachother
  ☐ Animate crash
+ ☐ Game over buttons work
