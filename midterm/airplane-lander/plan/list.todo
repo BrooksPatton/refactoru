@@ -45,7 +45,7 @@ Roadmap Alpha:
   ☐ Level system
   ☐ Missions
   ☐ Local storage to save points
-  ☐ Players are unable to play the game after the game ends
+  ✔ Players are unable to play the game after the game ends @done (14-07-16 11:27)
  ☐ Airplanes can collide with eachother
  ☐ Animate crash
- ☐ Game over buttons work
+ ☐ Fire shouldn't be moveable
