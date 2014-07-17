@@ -27,15 +27,21 @@ var Lander = (function() {
 	var peopleKilled = 0;
 	var newPlanesInterval;
 	var gameType;
+	var game = {};
 
 	//functions
 	var displayGameModeDescription = function() {
+		$(this).siblings('button').removeClass('btn-primary').addClass('btn-default');
 		Lander.gameType = $(this).data('game');
 		var html = $('<p>');
 		switch ( Lander.gameType ) {
 			case 'time-trial':
 				html.append('You get 60 seconds to land as many planes as possible. Your score will be based on the number of passengers safely delivered to the Airport. Passengers who don\'t make it will be subracted from your score.');
 				break;				
+
+			case 'perfection':
+				html.append('The game ends as soon as a plane is lost. How many passengers can you land until a plane crashes.');
+				break;
 		}
 
 		$('.game-explanation').html(html);
@@ -184,5 +190,6 @@ var Lander = (function() {
 		cleanUpPlanesList: cleanUpPlanesList,
 		selectedPlane: selectedPlane,
 		displayGameModeDescription: displayGameModeDescription,
+		game: game
 	};
 })();

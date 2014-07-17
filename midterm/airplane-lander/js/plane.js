@@ -1,17 +1,48 @@
+/**
+ * The plane constructor
+ * @param {number} y number of pixels from the top of the screen that the plane will render
+ */
 Lander.Plane = function(y) {
 	this.y = y || Lander.getRandomHeightInSky();
+	/**
+	 * The status of the plane. Can be 'flying' or 'crashed'
+	 * @type {String}
+	 */
 	this.status = 'flying';
+	/**
+	 * The identification number of the plane
+	 * @type {number}
+	 */
 	this.id = Lander.planeId++;
 };
 
+/**
+ * Create method for the plane object
+ */
 Lander.Plane.prototype.create = function() {
+	/**
+	 * Create the jQuery element that will be inserted into the DOM
+	 * @type {jQuery object}
+	 */
 	this.el = $('<i class="plane icon-flight-1">');
+	/**
+	 * Set the position of the plane
+	 */
 	this.el.css({
 		top: this.y,
 		position: 'absolute'
 	});
+	/**
+	 * Set the size of the plane. Can be small, medium, or large
+	 */
 	this.el.addClass( this.randomSize() );
+	/**
+	 * Put the planes id into the data attribute of the element
+	 */
 	this.el.attr('data-id', this.id);
+	/**
+	 * Set the number of passengers in the plane
+	 */
 	this.getNumberOfPassengers();
 	this.getFuel();
 };
@@ -168,7 +199,9 @@ Lander.Plane.prototype.crashIntoGround = function() {
 			self.el.addClass('icon-fire-station');
 			Lander.peopleKilled += self.passengerCount;
 			self.delete();
-			// Lander.gameOver();
+			if(Lander.game.stopOnCrash) {
+				Lander.gameOver();
+			}
 		}
 	});
 };
@@ -208,6 +241,9 @@ Lander.Plane.prototype.explodeFromCollision = function() {
 		done: function() {
 			Lander.peopleKilled += this.passengerCount;
 			this.delete();
+			if(Lander.game.stopOnCrash) {
+				Lander.gameOver();
+			}
 		}.bind(this)
 	});
 };

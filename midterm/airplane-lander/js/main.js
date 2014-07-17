@@ -1,9 +1,9 @@
 $(document).on('ready', function() {
 	// Create an instance of the GameEngine constructor
-	var game = new Lander.GameEngine();
+	Lander.game = new Lander.GameEngine();
 
 	// Start the engine
-	game.start();
+	Lander.game.start();
 	
 	// Lander.initAirport();
 
@@ -12,6 +12,6 @@ $(document).on('ready', function() {
 	// Lander.startGame();
 
 	$('.game-type').on('click', Lander.displayGameModeDescription);
-	$('#start-game').on('click', game.launchGame.bind(game));
+	$('#start-game').on('click', Lander.game.launchGame.bind(Lander.game));
 	// $('.sky').on('mousedown', '.plane', Lander.selectPlane);
 });  

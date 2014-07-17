@@ -10,6 +10,9 @@ Lander.GameEngine.prototype.launchGame = function() {
 	if(Lander.gameType === 'time-trial') {
 		this.startTimeTrialGame();
 	}
+	else if(Lander.gameType === 'perfection') {
+		this.startPerfectionGame();
+	}
 };
 
 Lander.GameEngine.prototype.startTimeTrialGame = function() {
@@ -18,4 +21,13 @@ Lander.GameEngine.prototype.startTimeTrialGame = function() {
 	$('.sky').on('mousedown', '.plane', Lander.selectPlane);
 	$('.launcher').hide();
 	setTimeout(Lander.gameOver.bind(Lander), 60000);
+	this.stopOnCrash = false;
+};
+
+Lander.GameEngine.prototype.startPerfectionGame = function() {
+	Lander.initAirport();
+	Lander.startGame();
+	$('.sky').on('mousedown', '.plane', Lander.selectPlane);
+	$('.launcher').hide();
+	this.stopOnCrash = true;
 };
