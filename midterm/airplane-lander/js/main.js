@@ -1,17 +1,21 @@
 $(document).on('ready', function() {
-	// Create an instance of the GameEngine constructor
+	/**
+	 * Creating an instance of the game in the Lander namespace so that everybody else can access the game object
+	 * @type {instance}
+	 */
 	Lander.game = new Lander.GameEngine();
 
-	// Start the engine
+	/**
+	 * Start the game engine
+	 */
 	Lander.game.start();
 	
-	// Lander.initAirport();
-
-	// Lander.buildRunway('small');
-
-	// Lander.startGame();
-
+	/**
+	 * Click handler for the game types when the player first loads the page
+	 */
 	$('.game-type').on('click', Lander.displayGameModeDescription);
+	/**
+	 * Click handler for starting the game after the player has chosen which game mode they want to play.
+	 */
 	$('#start-game').on('click', Lander.game.launchGame.bind(Lander.game));
-	// $('.sky').on('mousedown', '.plane', Lander.selectPlane);
 });  
