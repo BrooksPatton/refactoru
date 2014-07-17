@@ -3,6 +3,7 @@
   <title>Airplane Lander</title>
   <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="http://summer2014-refactoru-students.herokuapp.com/public/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.1/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
@@ -42,6 +43,15 @@
           <button class="btn btn-success" id='start-game' disabled='disabled'>Start Game</button>
         </div>
       </section>
+
+      <section class="worldScores bg-clouds hidden">
+        <div>
+          <h3>Scores:</h3>
+        </div>
+        <div>
+          <table cellpadding="0" cellspacing="0" border="0" class="display" id='world-scores'></table>
+        </div>
+      </section>
 			
 		</section>
 
@@ -54,6 +64,7 @@
 		</section>
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src='http://cdn.datatables.net/1.10.1/js/jquery.dataTables.js'></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
   <script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
   <script type="text/javascript" src='js/uservoice.js'></script>

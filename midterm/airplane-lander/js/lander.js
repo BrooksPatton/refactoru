@@ -229,6 +229,7 @@ var Lander = (function() {
 	 */
 	var gameOver = function() {
 		clearInterval(newPlanesInterval);
+		$('.plane').stop(true);
 		planeList.forEach(function(item) {
 			item.stopFlying();
 		});
@@ -250,9 +251,36 @@ var Lander = (function() {
 		var query = new Parse.Query(Lander.gameType)
 		query.find().then(
 			function(results) {
-				console.log(results);
+				var dataSet = Lander.generateTableDataSet(results);
+				var columns = [
+					{'title': 'Player'},
+					{'title': 'Passengers Saved'},
+					{'title': 'Passengers Killed'},
+					{'title': 'Total Score'}
+				];
+				Lander.displayWorldScoresTable(columns, dataSet);
 			}
 		);
+	};
+
+	var generateTableDataSet = function(data) {
+		var set = [];
+		data.forEach(function(item) {
+			set.push(
+				[item.attributes.player, item.attributes.saved, item.attributes.killed, item.attributes.totalScore]
+			);
+		})
+		return set;
+	};
+
+	var displayWorldScoresTable = function(columns, dataSet) {
+		$('.game-over').addClass('hidden');
+		$('.worldScores').removeClass('hidden');
+		$('#world-scores').dataTable({
+			'data': dataSet,
+			'columns': columns,
+			'order': [3, 'desc']
+		});
 	};
 
 	//return
@@ -296,6 +324,8 @@ var Lander = (function() {
 		selectedPlane: selectedPlane,
 		displayGameModeDescription: displayGameModeDescription,
 		game: game,
-		gameScoreSaved: gameScoreSaved
+		gameScoreSaved: gameScoreSaved,
+		generateTableDataSet: generateTableDataSet,
+		displayWorldScoresTable: displayWorldScoresTable
 	};
 })();
