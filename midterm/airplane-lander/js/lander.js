@@ -88,7 +88,7 @@ var Lander = (function() {
 		Lander.gameType = $(this).data('game');
 		var html = $('<p>');
 		switch ( Lander.gameType ) {
-			case 'time-trial':
+			case 'timeTrial':
 				html.append('You get 60 seconds to land as many planes as possible. Your score will be based on the number of passengers safely delivered to the Airport. Passengers who don\'t make it will be subracted from your score.');
 				break;				
 
@@ -236,7 +236,7 @@ var Lander = (function() {
 		$('#people-saved').text(this.peopleSaved);
 		$('#people-killed').text(this.peopleKilled);
 		$('#total-score').text( this.peopleSaved - this.peopleKilled );
-		$('.game-over').removeClass('hidden')
+		$('.game-over').removeClass('hidden');
 	};
 
 	/**
@@ -244,6 +244,15 @@ var Lander = (function() {
 	 */
 	var cleanUpPlanesList = function() {
 		planeList = _.reject(planeList, function(item) {return item.status === 'crashed'});
+	};
+
+	var gameScoreSaved = function() {
+		var query = new Parse.Query(Lander.gameType)
+		query.find().then(
+			function(results) {
+				console.log(results);
+			}
+		);
 	};
 
 	//return
@@ -286,6 +295,7 @@ var Lander = (function() {
 		cleanUpPlanesList: cleanUpPlanesList,
 		selectedPlane: selectedPlane,
 		displayGameModeDescription: displayGameModeDescription,
-		game: game
+		game: game,
+		gameScoreSaved: gameScoreSaved
 	};
 })();

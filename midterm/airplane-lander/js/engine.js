@@ -16,7 +16,7 @@ Lander.GameEngine.prototype.start = function() {
  * Launch the game, depending on the game mode selected by the Player
  */
 Lander.GameEngine.prototype.launchGame = function() {
-	if(Lander.gameType === 'time-trial') {
+	if(Lander.gameType === 'timeTrial') {
 		this.startTimeTrialGame();
 	}
 	else if(Lander.gameType === 'perfection') {

@@ -15,6 +15,16 @@
           <p>You saved <span id='people-saved'></span> passengers before killing <span id='people-killed'></span> innocent people.</p>
           <p>Your Score: <span id='total-score'></span></p>
         </div>
+        <div>
+          <form class="form-inline" id="send-score-to-server-form">
+            <div class="form-group">
+              <input type='text' class="form-control" name='initials' placeholder='Initials'>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary">Submit Score</button>
+            </div>
+          </form>
+        </div>
       </section>
 
       <section class="launcher bg-clouds hidden">
@@ -23,7 +33,7 @@
           <div class="game-modes">
             <h5>Game Modes</h5>
             <p>
-              <button class="btn btn-default game-type" data-game="time-trial">Time Trial</button>
+              <button class="btn btn-default game-type" data-game="timeTrial">Time Trial</button>
               <button class="btn btn-default game-type" data-game="perfection">Perfection</button>
             </p>
           </div>
@@ -45,6 +55,7 @@
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
   <script type="text/javascript" src='js/uservoice.js'></script>
   <script type="text/javascript" src='js/lander.js'></script>
   <script type="text/javascript" src='js/airport.js'></script>
