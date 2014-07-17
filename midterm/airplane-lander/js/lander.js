@@ -1,7 +1,7 @@
 var Lander = (function() {
 	// Constants
 	var PLANE_FLY_INTERVAL = 10;
-	var PLANE_LAUNCH_INTERVAL = 3000;
+	var PLANE_LAUNCH_INTERVAL = 2500;
 	var PLANE_SPEED = 1;
 	var PLANE_LANDING_SPEED = 10000;
 	var MAX_SMALL_PLANE_PASSENGERS = 50;
@@ -26,17 +26,22 @@ var Lander = (function() {
 	var peopleSaved = 0;
 	var peopleKilled = 0;
 	var newPlanesInterval;
+	var gameType;
 
 	//functions
-	var displayGameModeDescription = function(gameMode) {
+	var displayGameModeDescription = function() {
+		Lander.gameType = $(this).data('game');
 		var html = $('<p>');
-		switch (gameMode) {
+		switch ( Lander.gameType ) {
 			case 'time-trial':
 				html.append('You get 60 seconds to land as many planes as possible. Your score will be based on the number of passengers safely delivered to the Airport. Passengers who don\'t make it will be subracted from your score.');
 				break;				
 		}
 
 		$('.game-explanation').html(html);
+		$(this).removeClass('btn-default');
+		$(this).addClass('btn-primary');
+		$('#start-game').removeAttr('disabled');
 	};
 
 	var initAirport = function() {
@@ -94,7 +99,7 @@ var Lander = (function() {
 	};
 
 	var landAtSmallRunway = function() {
-		if( selectedPlane.el.hasClass('icon-small') ) {
+		if( selectedPlane.el.hasClass('icon-small') && selectedPlane.status !== 'crashed' ) {
 			var runway = _.findWhere(airport.runways, {size: 'runway-small'});
 			selectedPlane.land(runway, Lander.landAtSmallRunway);
 		}
@@ -104,7 +109,7 @@ var Lander = (function() {
 	};
 
 	var landAtMediumRunway = function() {
-		if( selectedPlane.el.hasClass('icon-medium') || selectedPlane.el.hasClass('icon-small') ) {
+		if( selectedPlane.el.hasClass('icon-medium') || selectedPlane.el.hasClass('icon-small') && selectedPlane.status !== 'crashed' ) {
 			var runway = _.findWhere(airport.runways, {size: 'runway-medium'});
 			selectedPlane.land(runway, Lander.landAtMediumRunway);
 		}
@@ -114,7 +119,7 @@ var Lander = (function() {
 	};
 
 	var landAtLargeRunway = function() {
-		if( selectedPlane.el.hasClass('icon-large') || selectedPlane.el.hasClass('icon-medium') || selectedPlane.el.hasClass('icon-small') ) {
+		if( selectedPlane.el.hasClass('icon-large') || selectedPlane.el.hasClass('icon-medium') || selectedPlane.el.hasClass('icon-small') && selectedPlane.status !== 'crashed') {
 			var runway = _.findWhere(airport.runways, {size: 'runway-large'});
 			selectedPlane.land(runway, Lander.landAtLargeRunway);
 		}
@@ -141,6 +146,7 @@ var Lander = (function() {
 
 	//return
 	return {
+		gameType: gameType,
 		initAirport: initAirport,
 		getRandomHeightInSky: getRandomHeightInSky,
 		newPlane: newPlane,
@@ -177,6 +183,6 @@ var Lander = (function() {
 		peopleKilled: peopleKilled,
 		cleanUpPlanesList: cleanUpPlanesList,
 		selectedPlane: selectedPlane,
-		displayGameModeDescription: displayGameModeDescription
+		displayGameModeDescription: displayGameModeDescription,
 	};
 })();

@@ -5,12 +5,13 @@ $(document).on('ready', function() {
 	// Start the engine
 	game.start();
 	
-	Lander.initAirport();
+	// Lander.initAirport();
 
-	Lander.buildRunway('small');
+	// Lander.buildRunway('small');
 
-	Lander.startGame();
+	// Lander.startGame();
 
-	$('#time-trial').on('click', Lander.displayGameModeDescription);
-	$('.sky').on('mousedown', '.plane', Lander.selectPlane);
+	$('.game-type').on('click', Lander.displayGameModeDescription);
+	$('#start-game').on('click', game.launchGame.bind(game));
+	// $('.sky').on('mousedown', '.plane', Lander.selectPlane);
 });  
