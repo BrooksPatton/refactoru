@@ -1,11 +1,20 @@
+/**
+ * The game engine constructor
+ */
 Lander.GameEngine = function() {
 };
 
+/**
+ * Start the game by showing the launcher window
+ */
 Lander.GameEngine.prototype.start = function() {
 	// Show the Launch screen where Players can choose game modes and start the game
 	$('.launcher').removeClass('hidden');
 };
 
+/**
+ * Launch the game, depending on the game mode selected by the Player
+ */
 Lander.GameEngine.prototype.launchGame = function() {
 	if(Lander.gameType === 'time-trial') {
 		this.startTimeTrialGame();
@@ -15,6 +24,9 @@ Lander.GameEngine.prototype.launchGame = function() {
 	}
 };
 
+/**
+ * Start a time trial game
+ */
 Lander.GameEngine.prototype.startTimeTrialGame = function() {
 	Lander.initAirport();
 	Lander.startGame();
@@ -24,6 +36,9 @@ Lander.GameEngine.prototype.startTimeTrialGame = function() {
 	this.stopOnCrash = false;
 };
 
+/**
+ * Start a Perfection game
+ */
 Lander.GameEngine.prototype.startPerfectionGame = function() {
 	Lander.initAirport();
 	Lander.startGame();
