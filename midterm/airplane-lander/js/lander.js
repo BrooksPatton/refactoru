@@ -28,6 +28,17 @@ var Lander = (function() {
 	var newPlanesInterval;
 
 	//functions
+	var displayGameModeDescription = function(gameMode) {
+		var html = $('<p>');
+		switch (gameMode) {
+			case 'time-trial':
+				html.append('You get 60 seconds to land as many planes as possible. Your score will be based on the number of passengers safely delivered to the Airport. Passengers who don\'t make it will be subracted from your score.');
+				break;				
+		}
+
+		$('.game-explanation').html(html);
+	};
+
 	var initAirport = function() {
 		airport = new Lander.Airport();
 		airport.runways.push( buildRunway('small') );
@@ -165,6 +176,7 @@ var Lander = (function() {
 		newPlanesInterval: newPlanesInterval,
 		peopleKilled: peopleKilled,
 		cleanUpPlanesList: cleanUpPlanesList,
-		selectedPlane: selectedPlane
+		selectedPlane: selectedPlane,
+		displayGameModeDescription: displayGameModeDescription
 	};
 })();
