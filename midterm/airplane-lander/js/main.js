@@ -26,13 +26,23 @@ $(document).on('ready', function() {
 	 * The player is submitting their score to the server
 	 */
 	$('#send-score-to-server-form').on('click', 'button', function(e) {
+		/**
+		 * Stop the browser from refreshing after clicking the button
+		 */
 		e.preventDefault();
 		var playerInitials = $('#send-score-to-server-form [name="initials"]').val();
 		var peopleKilled = Lander.peopleKilled;
 		var peopleSaved = Lander.peopleSaved;
 		var totalScore = peopleSaved - peopleKilled;
 		var gameType = Lander.gameType;
+		/**
+		 * Creating the gameType Parse Object
+		 * @type {Parse}
+		 */
 		var gameScore = new Parse.Object(gameType);
+		/**
+		 * Save the players score to the server, when finished, call the function gameScoreSaved in the Lander namespace
+		 */
 		gameScore.save({
 			'player': playerInitials,
 			'killed': peopleKilled,
