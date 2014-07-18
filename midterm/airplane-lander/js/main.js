@@ -53,4 +53,11 @@ $(document).on('ready', function() {
 				Lander.gameScoreSaved();
 			});
 	});
+
+	/**
+	 * When the player clicks on the play again button, reload the page so that they can play again
+	 */
+	$('.play-again').on('click', function() {
+		location.reload();
+	})
 });  

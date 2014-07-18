@@ -89,11 +89,11 @@ var Lander = (function() {
 		var html = $('<p>');
 		switch ( Lander.gameType ) {
 			case 'timeTrial':
-				html.append('You get 60 seconds to land as many planes as possible. Your score will be based on the number of passengers safely delivered to the Airport. Passengers who don\'t make it will be subracted from your score.');
+				html.append('You get 60 seconds to score as many points as possible before the game ends. Be careful about letting planes crash, lost passengers will reduce your score. Good luck!');
 				break;				
 
 			case 'perfection':
-				html.append('The game ends as soon as a plane is lost. How many passengers can you land until a plane crashes.');
+				html.append('There is no time-limit, but the game ends as soon as a plane crashes into another plane or runs out of fuel. Good luck!');
 				break;
 		}
 
