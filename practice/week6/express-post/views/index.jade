@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	h1 Hello Boulder!
+
+	h3 Last Submission
+	p #{submissionData.username}
+
+	form(method='post', action='/handleForm')#myForm
+		input(type='text', placeholder='username', name='username')
+		input(type='text', placeholder='email', name='email')
+		input(type='submit')
