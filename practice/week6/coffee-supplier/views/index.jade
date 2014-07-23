@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	h1 Worldwide Coffee Supply
+	.products
+		for product in coffeeProducts
+			.product
+				h2 #{product.name}
+				p 
+					b Price: 
+					| #{product.price}
+				p 
+					b Origin: 
+					| #{product.origin}

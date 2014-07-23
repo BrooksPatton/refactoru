@@ -1,0 +1,13 @@
+extend layout
+
+block title
+	title Video Submissions
+
+block content
+	.container
+		header
+			h1 Video Contest
+			h3 Submitted Videos
+
+	- for(var i = 0; i < #{data}.length); i++)
+	p #{data[i].videoSubmitterName}
