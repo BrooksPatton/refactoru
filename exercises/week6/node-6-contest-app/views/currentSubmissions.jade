@@ -9,5 +9,5 @@ block content
 			h1 Video Contest
 			h3 Submitted Videos
 
-	- for(var i = 0; i < #{data}.length); i++)
-	p #{data[i].videoSubmitterName}
+		.col-md-4
+			iframe(width="560", height="315", src='"' + data.videoAddress + '"', frameborder="0", allowfullscreen)
