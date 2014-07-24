@@ -21,4 +21,12 @@ var products = [
 	}
 ];
 
-module.exports = products;
+var Product = {
+	list: function(cb) {
+		setTimeout(function() {
+			cb(products);
+		}, 2000);
+	}
+};
+
+module.exports = Product;
