@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var VideoContest = require('./js/video-contest.js');
+var indexController = require('./controller/index.js');
 
 var app = express();
 app.set('view engine', 'jade');
@@ -8,21 +8,14 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser());
 
-app.get('/', function(req, res) {
-	res.render('submitVideo');
-});
+app.get('/', indexController.loadIndex);
 
-// Route to handle the video submission
-app.post('/submitVideo', function(req, res) {
-	VideoContest.data.push(req.body);
-	res.redirect('/');
-})
+app.get('/submit', indexController.submit);
 
-// Route to the current video submissions
-app.get('/currentSubmissions', function(req, res) {
-	res.render('currentSubmissions', VideoContest.data);
-})
+app.post('/submit-video-form', indexController.submitVideoForm);
 
-var server = app.listen(8503, function() {
+app.get('/vote', indexController.vote);
+
+var server = app.listen(3501, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });

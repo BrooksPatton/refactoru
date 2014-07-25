@@ -1,0 +1,10 @@
+extends layout
+
+block title
+	title Vote on your favorite videos now!
+
+block content
+	h1 Vote on your favorite videos
+	for video in videos
+		.video
+			iframe(width='560', height='315', src=video.url, frameborder='0', allowfullscreen)

@@ -1,0 +1,14 @@
+extends layout
+
+block title
+	title Submit a new video
+
+block content
+	h1 Submit a video for the contest
+	h3 #{videoSubmissions} / 8 Videos submitted
+	form(method='post', action='/submit-video-form', name='submit-video-form')
+		p: input(type='text', name='submitterName', placeholder='Your name')
+		p: input(type='text', name='url', placeholder='URL', size='150')
+		p: input(type='text', name='title', placeholder='Title')
+		p: textarea(name='description', placeholder='Description')
+		p: input(type='submit')
