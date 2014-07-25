@@ -5,6 +5,10 @@ block title
 
 block content
 	h1 Vote on your favorite videos
-	for video in videos
-		.video
-			iframe(width='560', height='315', src=video.url, frameborder='0', allowfullscreen)
+	if(message)
+		h2 Not enough videos
+	if(videos)
+		for video in videos
+			.video
+				iframe(width='560', height='315', src=video.url, frameborder='0', allowfullscreen)
+				button(onclick='vote(' + video.id + ')') Vote!

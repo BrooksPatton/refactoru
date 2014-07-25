@@ -17,8 +17,9 @@ var indexController = (function() {
 		if(!isAtMaxVideos()) {
 			var video = req.body;
 			video.url = videoContest.generateYoutubeUrl(video.url);
+			video.id = videoContest.generateVideoId();
 			videoContest.videoList.push(video);
-			res.redirect('/');
+			res.redirect('/submit');
 		}
 		else {
 			res.redirect('vote');
@@ -33,9 +34,17 @@ var indexController = (function() {
 	};
 
 	var vote = function(req, res) {
-		res.render('vote', {
-			videos: videoContest.videoList
-		});
+		if( isAtMaxVideos() ) {
+			var videosToVoteOn = videoContest.getTwoRandomVideos();
+			res.render('vote', {
+				videos: videosToVoteOn
+			});
+		}
+		else {
+			res.render('vote', {
+				message: 'Not enough videos'
+			});
+		}
 	};
 
 	return {
