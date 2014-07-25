@@ -18,6 +18,7 @@ var indexController = (function() {
 			var video = req.body;
 			video.url = videoContest.generateYoutubeUrl(video.url);
 			video.id = videoContest.generateVideoId();
+			video.votes = 0;
 			videoContest.videoList.push(video);
 			res.redirect('/submit');
 		}
