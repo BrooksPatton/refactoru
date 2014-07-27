@@ -394,11 +394,10 @@ Lander.Plane.prototype.detectCollision = function() {
 	otherPlanes.forEach(function(plane) {
 		var otherPlanePosition = plane.el.position();
 		if(
-			myPosition.left < otherPlanePosition.left + plane.el.width() && 
-			myPosition.left + this.el.width() > otherPlanePosition.left &&
+			myPosition.left < otherPlanePosition.left + plane.el.width() - Lander.HIT_DETECTION_OFFSET && 
+			myPosition.left + this.el.width() - Lander.HIT_DETECTION_OFFSET > otherPlanePosition.left &&
 			myPosition.top < otherPlanePosition.top + plane.el.height() &&
-			myPosition.top + this.el.height() > otherPlanePosition.top
-		) {
+			myPosition.top + this.el.height() > otherPlanePosition.top ) {
 			this.explodeFromCollision();
 		}
 	}.bind(this));

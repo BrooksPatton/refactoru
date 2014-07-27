@@ -49,6 +49,9 @@ var Lander = (function() {
 	 */
 	var PLANE_CRASH_SPEED = 500;
 
+	// Hit detection offset in pixels
+	var HIT_DETECTION_OFFSET = 15;
+
 	//variables
 	/**
 	 * variable to hold the airport instance
@@ -326,6 +329,7 @@ var Lander = (function() {
 		game: game,
 		gameScoreSaved: gameScoreSaved,
 		generateTableDataSet: generateTableDataSet,
-		displayWorldScoresTable: displayWorldScoresTable
+		displayWorldScoresTable: displayWorldScoresTable,
+		HIT_DETECTION_OFFSET: HIT_DETECTION_OFFSET
 	};
 })();
