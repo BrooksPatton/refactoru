@@ -48,11 +48,17 @@ var indexController = (function() {
 		}
 	};
 
+	var userVoted = function(req, res) {
+		var vote = req.body;
+		videoContest.voteOnVideo(vote.id);
+	};
+
 	return {
 		loadIndex: loadIndex,
 		submit: submit,
 		submitVideoForm: submitVideoForm,
-		vote: vote
+		vote: vote,
+		userVoted: userVoted
 	};
 })();
 

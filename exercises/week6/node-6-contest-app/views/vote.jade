@@ -11,4 +11,7 @@ block content
 		for video in videos
 			.video
 				iframe(width='560', height='315', src=video.url, frameborder='0', allowfullscreen)
-				button(onclick='vote(' + video.id + ')') Vote!
+				p
+					form(method='post', action='/vote')
+						button(name='vote', value=video.id) Vote!
+				p #{video.votes}

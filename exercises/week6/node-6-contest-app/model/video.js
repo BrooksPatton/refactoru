@@ -23,11 +23,19 @@ var videoContest = (function() {
 		];
 	};
 
+	var voteOnVideo = function(id) {
+		var id = Number(id);
+		console.log(id);
+		var videoListIndex = _.findWhere(videoList, {id: id});
+		console.log(videoListIndex);
+	};
+
 	return {
 		videoList: videoList,
 		generateYoutubeUrl: generateYoutubeUrl,
 		generateVideoId: generateVideoId,
-		getTwoRandomVideos: getTwoRandomVideos
+		getTwoRandomVideos: getTwoRandomVideos,
+		voteOnVideo: voteOnVideo
 	};
 })();
 

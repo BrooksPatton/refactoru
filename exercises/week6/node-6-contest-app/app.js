@@ -16,6 +16,8 @@ app.post('/submit-video-form', indexController.submitVideoForm);
 
 app.get('/vote', indexController.vote);
 
+app.post('/vote', indexController.userVoted);
+
 var server = app.listen(3501, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
