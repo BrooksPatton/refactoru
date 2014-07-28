@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var countries = require('./models/countries.json');
 
 var app = express();
 app.set('view engine', 'jade');
@@ -13,6 +14,7 @@ app.get('/', function(req, res) {
 
 app.post('/countries', function(req, res) {
 	res.send('test');
+	console.log(countries);
 });
 
 var server = app.listen(5038, function() {
