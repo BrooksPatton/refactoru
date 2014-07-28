@@ -16,6 +16,10 @@ app.post('/countries', function(req, res) {
 	res.send(countries);
 });
 
+app.post('/search', function(req, res) {
+	console.log(req.body);
+});
+
 var server = app.listen(5038, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });

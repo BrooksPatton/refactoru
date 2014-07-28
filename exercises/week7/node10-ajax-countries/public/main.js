@@ -13,4 +13,13 @@ $(document).on('ready', function() {
 			}
 		});
 	});
+
+	$('#search').on('click', function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: '/search',
+			type: 'post',
+			data: {search: $('#searchCountry').val()}
+		})
+	})
 });
