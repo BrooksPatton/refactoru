@@ -5,7 +5,11 @@ $(document).on('ready', function() {
 			url: '/countries',
 			type: 'post',
 			success: function(result) {
-				console.log(result);
+				var el = $('<ul>');
+				result.forEach(function(country) {
+					el.append('<li><b>Name:</b> ' + country.name);
+				});
+				$('body').append(el);
 			}
 		});
 	});
