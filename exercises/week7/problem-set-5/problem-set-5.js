@@ -4,4 +4,10 @@ function alphabetSoup(str) {
 	return arr.join('');
 }
 
-console.log( alphabetSoup('hello') );
+function vowelCount(str) {
+	var vowels = str.match(/[aAeEiIoOuU]/g);
+	return vowels.length;
+}
+
+// console.log( alphabetSoup('hello') );
+console.log( vowelCount('All cows eat grass') );
