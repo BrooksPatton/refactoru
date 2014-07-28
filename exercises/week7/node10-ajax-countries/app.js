@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var countries = require('./models/countries.json');
+var _ = require('underscore');
 
 var app = express();
 app.set('view engine', 'jade');
@@ -17,7 +18,11 @@ app.post('/countries', function(req, res) {
 });
 
 app.post('/search', function(req, res) {
-	console.log(req.body);
+	var search = req.body.country;
+	var result = _.where(countries, {
+		name: search
+	});
+	res.send(result);
 });
 
 var server = app.listen(5038, function() {

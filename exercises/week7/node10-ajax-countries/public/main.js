@@ -19,7 +19,7 @@ $(document).on('ready', function() {
 		$.ajax({
 			url: '/search',
 			type: 'post',
-			data: {search: $('#searchCountry').val()}
+			data: { country: $('#searchCountry').val() }
 		})
 	})
 });
