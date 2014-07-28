@@ -21,7 +21,10 @@ $(document).on('ready', function() {
 			type: 'post',
 			data: { country: $('#searchCountry').val() },
 			success: function(result) {
-				console.log(result);
+				$('ul').empty();
+				result.forEach(function(result) {
+					$('ul').append('<li><b>Name: </b> ' + result.name);
+				});
 			}
 		})
 	})
