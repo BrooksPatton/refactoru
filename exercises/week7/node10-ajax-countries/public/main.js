@@ -3,7 +3,10 @@ $(document).on('ready', function() {
 		e.preventDefault();
 		$.ajax({
 			url: '/countries',
-			type: 'post'
-		})
-	})
-})
+			type: 'post',
+			success: function(result) {
+				console.log(result);
+			}
+		});
+	});
+});

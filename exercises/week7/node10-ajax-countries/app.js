@@ -13,8 +13,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/countries', function(req, res) {
-	res.send('test');
-	console.log(countries);
+	res.send(countries);
 });
 
 var server = app.listen(5038, function() {
