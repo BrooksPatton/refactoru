@@ -19,7 +19,10 @@ $(document).on('ready', function() {
 		$.ajax({
 			url: '/search',
 			type: 'post',
-			data: { country: $('#searchCountry').val() }
+			data: { country: $('#searchCountry').val() },
+			success: function(result) {
+				console.log(result);
+			}
 		})
 	})
 });
