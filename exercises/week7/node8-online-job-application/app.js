@@ -16,7 +16,16 @@ app.get('/', function(req, res) {
 
 // displays a list of applicants
 app.get('/applicants', function(req, res){
-	res.render('applicants')
+	var Applicants = mongoose.model('Applicant', {
+		'name': String,
+		'bio': String,
+		'skills': String,
+		'years': Number,
+		'why': String
+	});
+	Applicants.find(function(err, results) {
+		res.render('applicants', {data: JSON.stringify(results)});
+	});
 });
 
 // creates and applicant
