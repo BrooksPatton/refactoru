@@ -10,21 +10,24 @@ app.use(bodyParser());
 
 mongoose.connect('mongodb://localhost/awesomeJS');
 
+var Applicant = mongoose.model('Applicant', {
+	'name': String,
+	'bio': String,
+	'skills': String,
+	'years': Number,
+	'why': String
+});
+
 app.get('/', function(req, res) {
 	res.render('index');
 });
 
 // displays a list of applicants
 app.get('/applicants', function(req, res){
-	var Applicants = mongoose.model('Applicant', {
-		'name': String,
-		'bio': String,
-		'skills': String,
-		'years': Number,
-		'why': String
-	});
-	Applicants.find(function(err, results) {
-		res.render('applicants', {data: JSON.stringify(results)});
+	Applicant.find({}, function(err, results) {
+		var data = results;
+		console.log(data);
+		res.render('applicants', {data: data});
 	});
 });
 
@@ -33,13 +36,7 @@ app.post('/applicant', function(req, res){
 	// Here is where you need to get the data
 	// from the post body and store it in the database
 	var userResponse = req.body;
-	var Applicant = mongoose.model('Applicant', {
-		'name': String,
-		'bio': String,
-		'skills': String,
-		'years': Number,
-		'why': String
-	});
+
 	var applicant = new Applicant({
 		name: userResponse.name,
 		bio: userResponse.bio,

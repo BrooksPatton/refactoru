@@ -4,4 +4,10 @@ block content
 	.container
 		h1 Applicants
 		ul#applications.list-unstyled
-			p #{data}
+			for i in data
+				li
+					b= i.name
+					p Bio: #{i.bio}
+					p Skills: #{i.skills}
+					p Years of Experience: #{i.years}
+					p Why they want to work here: #{i.why}
