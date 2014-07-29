@@ -17,6 +17,7 @@ var Applicant = mongoose.model('Applicant', {
 	'years': Number,
 	'why': String
 });
+var applicant;
 
 app.get('/', function(req, res) {
 	res.render('index');
@@ -26,7 +27,6 @@ app.get('/', function(req, res) {
 app.get('/applicants', function(req, res){
 	Applicant.find({}, function(err, results) {
 		var data = results;
-		console.log(data);
 		res.render('applicants', {data: data});
 	});
 });
@@ -37,7 +37,7 @@ app.post('/applicant', function(req, res){
 	// from the post body and store it in the database
 	var userResponse = req.body;
 
-	var applicant = new Applicant({
+	applicant = new Applicant({
 		name: userResponse.name,
 		bio: userResponse.bio,
 		skills: userResponse.skills,
@@ -51,6 +51,11 @@ app.post('/applicant', function(req, res){
 
 app.get('/success', function(req, res) {
 	res.render('success');
+});
+
+app.post('/delete', function(req, res) {
+	var userId = req.body.userId;
+	Applicant.substring.pull(userId);
 });
 
 var server = app.listen(8441, function() {
