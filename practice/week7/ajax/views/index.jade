@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	h1 Hello Boulder!
+	a(href='#')#random Get Random Numbers
+	form#numberForm
+		input(type='number', size='10', placeholder='Add number')#add-number
+		input(type='submit', value='Get Numbers')#submit-new-number
+	h2  
+		| The total is: 
+		span#total
+	ul#numbers
+
+block scripts
+	script(src='/scripts/index.js')
