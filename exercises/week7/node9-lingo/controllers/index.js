@@ -6,9 +6,10 @@ var indexController = {
 	},
 
 	translate: function(req, res) {
-		Languages.getLanguages( console.log );
 
-		res.render('translate');
+		res.render('translate', {
+			data: Languages.languages
+		});
 	}
 };
 

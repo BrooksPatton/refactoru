@@ -4,3 +4,6 @@ block content
 	h1 Translate
 	form#translate-form
 		input(type='text', name='translate-from', placeholder='Word to Translate')
+		select(name='from-to')
+			for i in data
+				option(value='#{i.from.code}-#{i.to.code}') #{i.from.name} >> #{i.to.name}
