@@ -1,1 +1,5 @@
 node_modules
+certrequest.csr
+hacksparrow-cert.pem
+hacksparrow-key.pem
+npm-debug.log
