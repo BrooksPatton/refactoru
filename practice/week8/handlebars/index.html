@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+</head>
+<body>
+
+	<!-- Placeholder that the template will fill -->
+	<ul id="games-list"></ul>
+	<div id="games-list-helper"></div>
+
+	<!-- Templates: -->
+	<script id='my-template' type='text/x-handlebars-template'>
+		<h1>{{header}}</h1>
+		<p>{{ message }}</p>
+	</script>
+
+	<script id='item-template' type='text/x-handlebars-template'>
+		<li><b>{{title}}</b> - {{platform}}</li>
+	</script>
+	
+	<!-- Using a handlebar each helper  -->
+	<script id='helper-template' type='text/x-handlebars-template'>
+		<ul>
+			{{#each games}}
+				<li>
+					<b>{{title}}</b> - {{platform}}
+					{{#if price}}
+						<em>{{price}}</em>
+					{{else}}
+						<em>No Price Set</em>
+					{{/if}}
+				</li>
+			{{/each}}
+		</ul>
+	</script>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+	<script src="main.js"></script>
+
+</body>
+</html>
