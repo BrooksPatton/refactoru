@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Untitled</title>
+</head>
+<body>
+
+	<div id="product-container"></div>
+
+	<script type='text/x-handlebars-template' id='handlebars-template'>
+		<div class='product'>
+		{{#each data}}
+			<h1>{{title}}</h1>
+			<p><img src="{{image}}"></p>
+			<p><b>Price: </b>${{cost}}</p>
+		{{/each}}
+		</div>
+	</script>
+	
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+	<script src='products-data.js'></script>
+	<script src="main.js"></script>
+
+</body>
+</html>
